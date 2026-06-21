@@ -78,7 +78,7 @@ Building enterprise agentic AI platforms · IIT (ISM) Dhanbad · Azure AI Certif
 |---|---|:---:|:---:|
 | [**GoKafka**](https://github.com/sahasiddharthi1/go_kafka) `Go` | Kafka-inspired distributed broker — TCP framing, ISR replication, consumer groups, DLQ, Gin/Swagger REST bridge | ![](https://img.shields.io/github/stars/sahasiddharthi1/go_kafka?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/go_kafka?style=flat-square&labelColor=343b41) |
 | [**ShopFlow**](https://github.com/sahasiddharthi1/djp) `Node.js` `React` | Distributed e-commerce backend — custom job processor, 20k+ jobs/min, exactly-once execution, AsyncLocalStorage APM | ![](https://img.shields.io/github/stars/sahasiddharthi1/djp?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/djp?style=flat-square&labelColor=343b41) |
-| [**TradeStream**](https://github.com/sahasiddharthi1/TradeStream) `React` `WebSockets` | Real-time trading dashboard — Chart.js, Web Workers, 50+ concurrent data streams | ![](https://img.shields.io/github/stars/sahasiddharthi1/TradeStream?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/TradeStream?style=flat-square&labelColor=343b41) |
+| [**Order-Api**](https://github.com/sahasiddharthi1/go_order_api) `golang` `HTTP` |  | ![](https://img.shields.io/github/stars/sahasiddharthi1/go_order_api?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/go_order_api?style=flat-square&labelColor=343b41) |
 
 ---
 
