@@ -1,39 +1,34 @@
-
+<!-- Animated Banner (capsule-render) -->
 <div align="center">
-
-  <!-- ANIMATED BANNER -->
-  <div align="center">
-    <img width="100%" src="https://capsule-render.vercel.app/api
-      ?type=shark&color=0A0F08&fontColor=CAFF3C
-      &text=%3E%20Siddharthi%20Saha&fontSize=38
-      &desc=Full%20Stack%20Developer%20%7C%20AI%20&%20Distributed%20Systems
-      &descColor=8AFF57
-      &animation=fadeIn" />
-  </div>
-
-  <!-- TYPING SVG + BADGE ROW -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&color=CAFF3C&center=true&vCenter=true&width=820&lines=$%20whoami%20%E2%86%92%20Full-Stack%20Developer%20%40%20LTIMindtree;
-  $%20skills%20%E2%86%92%20React%20%7C%20Go%20%7C%20TypeScript%20%7C%20AWS%20Bedrock;
-  $%20cat%20open-to.txt%20%E2%86%92%20Senior%20Engineering%20roles;
-  $%20location%20%E2%86%92%20India" />
-
-  <!-- INFO BADGES ROW -->
-  <br/>
-  <div align="center">
-    <a href="https://portfolio-phi-mocha-36.vercel.app/">
-      <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
-    </a>
-    <a href="https://www.linkedin.com/in/siddharthi-saha-269280259/">
-      <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>
-    <a href="https://github.com/sahasiddharthi1">
-      <img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
-    </a>
-  </div>
-
+  <img width="100%" src="https://capsule-render.vercel.app/api
+    ?type=shark&color=0A0F08&fontColor=CAFF3C
+    &text=%3E%20Siddharthi%20Saha&fontSize=38
+    &desc=Full%20Stack%20Developer%20%7C%20AI%20&%20Distributed%20Systems
+    &descColor=8AFF57
+    &animation=fadeIn" />
 </div>
 
-<!-- ABOUT / BIO BLOCK -->
+<!-- Typing SVG + Badge Row -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&color=CAFF3C&center=true&vCenter=true&width=820&lines=$%20whoami%20%E2%86%92%20Full-Stack%20Developer%20%40%20LTIMindtree;
+$%20skills%20%E2%86%92%20React%20%7C%20Go%20%7C%20TypeScript%20%7C%20AWS%20Bedrock;
+$%20cat%20open-to.txt%20%E2%86%92%20Senior%20Engineering%20roles;
+$%20location%20%E2%86%92%20India" />
+
+<!-- Info Badges Row -->
+<br/>
+<div align="center">
+  <a href="https://portfolio-phi-mocha-36.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/siddharthi-saha-269280259/">
+    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://github.com/sahasiddharthi1">
+    <img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</div>
+
+<!-- About / Bio Block -->
 ## `> whoami`
 
 Siddharthi Saha | Full-Stack Developer | AI & Distributed Systems | 2+ Years Experience
@@ -48,14 +43,14 @@ STACK    =  React, Go, TypeScript, AWS Bedrock, Azure OpenAI
 OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
 ```
 
-<!-- TECH STACK ICONS -->
+<!-- Tech Stack Icons -->
 ### Skills
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=react,go,typescript,aws,azure&theme=dark&perline=5" />
 </div>
 
-<!-- DOMAIN EXPERTISE TABLE -->
+<!-- Domain Expertise Table -->
 ### Specialization
 
 | Domain | Proficiency | Details |
@@ -65,7 +60,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
 | Cloud Infrastructure | Advanced | AWS, Azure, Docker, Kubernetes, Terraform |
 | Backend Development | Expert | Go, Node.js, Express, MongoDB, Redis, gRPC |
 
-<!-- FEATURED PROJECTS (collapsible) -->
+<!-- Featured Projects (collapsible) -->
 ### Featured Projects
 
 <details open>
@@ -98,7 +93,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
 
 </details>
 
-<!-- EXPERIENCE LOG -->
+<!-- Experience Log -->
 ### Experience Log
 
 **Full-Stack Developer** | LTIMindtree | 2024 - Present
@@ -109,7 +104,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
 
 **Educational Background** | IIT (ISM) Dhanbad | B.Tech Electrical Engineering | 2020-2024
 
-<!-- GITHUB ANALYTICS WIDGETS -->
+<!-- GitHub Analytics Widgets -->
 ### GitHub Analytics
 
 <div align="center">
@@ -131,7 +126,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
     ?username=sahasiddharthi1&theme=2077" width="100%" />
 </div>
 
-<!-- GITHUB TROPHIES -->
+<!-- GitHub Trophies -->
 ### GitHub Trophies
 
 <div align="center">
@@ -142,7 +137,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
   </a>
 </div>
 
-<!-- ACTIVITY GRAPH -->
+<!-- Activity Graph -->
 ### Contribution Activity Graph
 
 <div align="center">
@@ -150,7 +145,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
     ?username=sahasiddharthi1&theme=tokyo-night&hide_border=true&area=true" />
 </div>
 
-<!-- CONTRIBUTION SUMMARY CARDS -->
+<!-- Contribution Summary Cards -->
 ### Profile Summary Cards
 
 <div align="center">
@@ -162,7 +157,7 @@ OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
     ?username=sahasiddharthi1&theme=2077" />
 </div>
 
-<!-- CURRENT FOCUS YAML + CONNECT -->
+<!-- Current Focus YAML + Connect -->
 ## `> cat current-focus.yaml`
 
 ```yaml
@@ -180,7 +175,7 @@ open_to:
   - AI/ML Infrastructure positions
   - Distributed systems challenges
 
-<!-- CONNECT -->
+<!-- Connect -->
 <div align="center">
   <a href="mailto:siddharthi.saha@example.com">
     <img src="https://img.shields.io/badge/Email-D1483B?style=for-the-badge&logo=gmail&logoColor=white" />
@@ -193,12 +188,12 @@ open_to:
   </a>
 </div>
 
-<!-- SNAKE ANIMATION -->
+<!-- Snake Animation -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/.github/workflows/snake.svg" alt="GitHub Snake Animation" />
 </div>
 
-<!-- CAPSULE RENDER FOOTER -->
+<!-- Capsule Render Footer -->
 <div align="center">
   <img width="100%" src="https://capsule-render.vercel.app/api
     ?type=wave&color=0A0F08&fontColor=CAFF3C
