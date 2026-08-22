@@ -1,3 +1,9 @@
+<!-- GitSkins Profile Widgets (Free) -->
+![sahasiddharthi1's GitHub profile](.gitskins/card.svg)
+![sahasiddharthi1's most used languages](.gitskins/languages.png)
+![sahasiddharthi1's contribution streak](.gitskins/streak.png)
+![sahasiddharthi1's GitHub stats](.gitskins/stats.png)
+
 <div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Siddharthi+%F0%9F%91%8B;Full-Stack+Developer+%40+LTIMindtree;UI+Architect+%7C+Distributed+Systems;React+%E2%80%A2+Go+%E2%80%A2+TypeScript+%E2%80%A2+AWS+Bedrock" alt="Typing SVG" />
@@ -5,7 +11,7 @@
 <br/>
 
 <p>
-Building enterprise agentic AI platforms · IIT (ISM) Dhanbad · Azure AI Certified 🇮🇳
+Building enterprise agentic AI platforms A� IIT (ISM) Dhanbad A� Azure AI Certified dY�rdY�3
 </p>
 
 <!-- Highlight pills -->
