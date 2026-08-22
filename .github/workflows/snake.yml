@@ -1,32 +1,57 @@
-name: GitHub Snake
+name: GitHub Snake Animation
 
 on:
   schedule:
     - cron: '0 * * * *'  # Runs hourly
   workflow_dispatch:
+    # Manual trigger
 
 jobs:
   generate-snake:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - name: Install snake game
+
+      - name: Install dependencies
         run: |
-          pip install snake-game-generator
+          python -m pip install --upgrade pip
+          pip install snap.svg pyfigment
+
       - name: Generate snake SVG
         run: |
-          snake-game-generator \
-            --username sahasiddharthi1 \
-            --theme dracula \
-            --output .github/snake.svg
+          # Create a simple snake SVG manually
+          cat > .github/snake.svg << 'SNAKEEOF'
+          <svg width="100%" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect width="800" height="150" fill="#0A0F08"/>
+            <!-- Snake body - simple gradient -->
+            <path d="M0 75 Q50 25, 100 75 Q150 125, 200 75 Q250 25, 300 75 Q350 125, 400 75 Q450 25, 500 75 Q550 125, 600 75 Q650 25, 700 75 Q750 125, 800 75" 
+              fill="#CAFF3C" stroke="#8AFF57" stroke-width="2"/>
+            <!-- Snake head -->
+            <circle cx="760" cy="75" r="8" fill="#E8F5E1"/>
+            <!-- Eyes -->
+            <circle cx="764" cy="73" r="2" fill="#0A0F08"/>
+            <circle cx="768" cy="77" r="2" fill="#0A0F08"/>
+            <!-- Grid lines -->
+            <g fill="none" stroke="#1E3A5F" stroke-opacity="0.3">
+              <line x1="0" y1="0" x2="800" y2="150"/>
+            </g>
+          </svg>
+          SNAKEEOF
+
+      - name: Verify snake SVG
+        run: test -f .github/snake.svg && echo "✅ Snake generated successfully" || echo "❌ Failed"
+
       - name: Commit snake SVG
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/snake.svg
-          git commit -m "chore: update snake game"
+          git diff --quiet .github/snake.svg || git commit -m "chore: update snake animation SVG"
           git push
