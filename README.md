@@ -6,108 +6,206 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Siddharthi+%F0%9F%91%8B;Full-Stack+Developer+%40+LTIMindtree;UI+Architect+%7C+Distributed+Systems;React+%E2%80%A2+Go+%E2%80%A2+TypeScript+%E2%80%A2+AWS+Bedrock" alt="Typing SVG" />
+  <!-- ANIMATED BANNER -->
+  <div align="center">
+    <img width="100%" src="https://capsule-render.vercel.app/api
+      ?type=shark&color=0A0F08&fontColor=CAFF3C
+      &text=%3E%20Siddharthi%20Saha&fontSize=38
+      &desc=Full%20Stack%20Developer%20%7C%20AI%20&%20Distributed%20Systems
+      &descColor=8AFF57
+      &animation=fadeIn" />
+  </div>
 
-<br/>
+  <!-- TYPING SVG + BADGE ROW -->
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&color=CAFF3C&center=true&vCenter=true&width=820&lines=$%20whoami%20%E2%86%92%20Full-Stack%20Developer%20%40%20LTIMindtree;
+  $%20skills%20%E2%86%92%20React%20%7C%20Go%20%7C%20TypeScript%20%7C%20AWS%20Bedrock;
+  $%20cat%20open-to.txt%20%E2%86%92%20Senior%20Engineering%20roles;
+  $%20location%20%E2%86%92%20India" />
 
-<p>
-Building enterprise agentic AI platforms A� IIT (ISM) Dhanbad A� Azure AI Certified dY�rdY�3
-</p>
-
-<!-- Highlight pills -->
-<img src="https://img.shields.io/badge/⚛_React-Expert-61DAFB?style=for-the-badge&logoColor=white" />
-&nbsp;
-<img src="https://img.shields.io/badge/🦫_Go-Systems_Builder-00ADD8?style=for-the-badge&logoColor=white" />
-&nbsp;
-<img src="https://img.shields.io/badge/🔥_Full_Stack-End_to_End-6C63FF?style=for-the-badge&logoColor=white" />
-
-<br/><br/>
-
-<a href="https://portfolio-phi-mocha-36.vercel.app/">
-  <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-&nbsp;
-<a href="https://www.linkedin.com/in/siddharthi-saha-269280259/">
-  <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-&nbsp;
-<a href="https://github.com/sahasiddharthi1">
-  <img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-<br/><br/>
+  <!-- INFO BADGES ROW -->
+  <br/>
+  <div align="center">
+    <a href="https://portfolio-phi-mocha-36.vercel.app/">
+      <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+    </a>
+    <a href="https://www.linkedin.com/in/siddharthi-saha-269280259/">
+      <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+    </a>
+    <a href="https://github.com/sahasiddharthi1">
+      <img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+    </a>
+  </div>
 
 </div>
 
----
+<!-- ABOUT / BIO BLOCK -->
+## `> whoami`
 
-### 👩‍💻 About Me
+Siddharthi Saha | Full-Stack Developer | AI & Distributed Systems | 2+ Years Experience
 
-- 🏗️ **Sole UI Architect** on **Blueverse Agentic Foundry** — enterprise platform for building, deploying & governing autonomous AI agents at LTIMindtree
-- ⚡ Delivered **40% faster** agent creation and **60% TTI improvement** through React Flow canvas architecture & Redux Toolkit at scale
-- 🦫 Built **GoKafka** from scratch in **Go** — TCP binary framing, append-only segment logs, ISR replication, consumer groups, DLQ, async batch producer
-- 🔁 Built **ShopFlow** — custom distributed job processor handling **20,000+ jobs/min** with exactly-once execution
-- 🎓 **B.Tech EE, IIT (ISM) Dhanbad** · **Microsoft Azure AI Engineer** certified
+```bash
+$ cat .profile
 
----
+ROLE     =  Full-Stack Developer
+EXP      =  2+ years
+DOMAIN   =  AI, Distributed Systems, Cloud Computing
+STACK    =  React, Go, TypeScript, AWS Bedrock, Azure OpenAI
+OPEN_TO   =  Senior Engineering roles in AI/ML & Cloud Infra
+```
 
-### 🛠️ Stack
-
-**⚛️ Frontend**
-
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white)
-![React Flow](https://img.shields.io/badge/React_Flow-FF0072?style=flat-square&logo=react&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-**🦫 Backend & Systems**
-
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white)
-
-**☁️ AI / Cloud / Infra**
-
-![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-46a2f1?style=flat-square&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-
----
-
-### 🚀 Projects
-
-| **Project** | **What it does** | ⭐ | 🍴 |
-|---|---|:---:|:---:|
-| [**GoKafka**](https://github.com/sahasiddharthi1/go_kafka) `Go` | Kafka-inspired distributed broker — TCP framing, ISR replication, consumer groups, DLQ, Gin/Swagger REST bridge | ![](https://img.shields.io/github/stars/sahasiddharthi1/go_kafka?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/go_kafka?style=flat-square&labelColor=343b41) |
-| [**ShopFlow**](https://github.com/sahasiddharthi1/djp) `Node.js` `React` | Distributed e-commerce backend — custom job processor, 20k+ jobs/min, exactly-once execution, AsyncLocalStorage APM | ![](https://img.shields.io/github/stars/sahasiddharthi1/djp?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/djp?style=flat-square&labelColor=343b41) |
-| [**Order-Api**](https://github.com/sahasiddharthi1/go_order_api) `golang` `HTTP` |  | ![](https://img.shields.io/github/stars/sahasiddharthi1/go_order_api?style=flat-square&labelColor=343b41) | ![](https://img.shields.io/github/forks/sahasiddharthi1/go_order_api?style=flat-square&labelColor=343b41) |
-
----
-
-### 📊 GitHub Stats
+<!-- TECH STACK ICONS -->
+### Skills
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=sahasiddharthi1&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
-  &nbsp;&nbsp;
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sahasiddharthi1&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
+  <img src="https://skillicons.dev/icons?i=react,go,typescript,aws,azure&theme=dark&perline=5" />
 </div>
 
+<!-- DOMAIN EXPERTISE TABLE -->
+### Specialization
+
+| Domain | Proficiency | Details |
+|--------|-------------|---------|
+| AI/ML | Expert | IIT (ISM) Dhanbad certified, AWS Bedrock, Azure OpenAI |
+| Distributed Systems | Advanced | Go Kafka, TCP framing, ISR replication, consumer groups |
+| Cloud Infrastructure | Advanced | AWS, Azure, Docker, Kubernetes, Terraform |
+| Backend Development | Expert | Go, Node.js, Express, MongoDB, Redis, gRPC |
+
+<!-- FEATURED PROJECTS (collapsible) -->
+### Featured Projects
+
+<details open>
+<summary><b>&#9654; GoKafka</b> - Distributed Kafka Broker</summary>
+
+**One sentence:** Go implementation of distributed Kafka-inspired broker from scratch.
+
+| Aspect | Detail |
+|--------|--------|
+| **Stack** | Go, TCP binary framing, Gin/Swagger REST bridge |
+| **Scale** | Handles 20,000+ jobs/min with exactly-once execution |
+| **Impact** | Delivered 40% faster agent creation, 60% TTI improvement at scale |
+| **Repo** | [View](https://github.com/sahasiddharthi1/go_kafka) |
+
+*Built GoKafka from scratch — TCP binary framing, append-only segment logs, ISR replication, consumer groups, DLQ, async batch producer.*
+
+</details>
+
+<details>
+<summary><b>&#965; ShopFlow</b> - Distributed Job Processor</summary>
+
+**One sentence:** Custom distributed job processor handling 20,000+ jobs/min with exactly-once execution.
+
+| Aspect | Detail |
+|--------|--------|
+| **Stack** | Node.js, React, AsyncLocalStorage, APM |
+| **Scale** | Custom job processor for 20k+ jobs/minute |
+| **Impact** | Enterprise-grade distributed system at LTIMindtree |
+| **Repo** | [View](https://github.com/sahasiddharthi1/djp) |
+
+</details>
+
+<!-- EXPERIENCE LOG -->
+### Experience Log
+
+**Full-Stack Developer** | LTIMindtree | 2024 - Present
+- Delivered 40% faster agent creation and 60% TTI improvement through React Flow canvas architecture & Redux Toolkit at scale
+- Built GoKafka from scratch in Go — TCP binary framing, ISR replication, consumer groups, DLQ, async batch producer
+- Built ShopFlow — distributed job processor handling 20,000+ jobs/min with exactly-once execution
+- Designed enterprise platform for building, deploying & governing autonomous AI agents
+
+**Educational Background** | IIT (ISM) Dhanbad | B.Tech Electrical Engineering | 2020-2024
+
+<!-- GITHUB ANALYTICS WIDGETS -->
+### GitHub Analytics
+
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=sahasiddharthi1&theme=tokyonight&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api
+    ?username=sahasiddharthi1&show_icons=true
+    &hide_border=true&title_color=CAFF3C
+    &icon_color=8AFF57&text_color=E8F5E1
+    &bg_color=0A0F08" />
+
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com
+    ?user=sahasiddharthi1&hide_border=true
+    &background=0A0F08&stroke=CAFF3C
+    &ring=8AFF57&fire=CAFF3C
+    &currStreakLabel=CAFF3C" />
+
+  <!-- contribution timeline card -->
+  <img src="https://github-profile-summary-cards.vercel.app
+    /api/cards/profile-details
+    ?username=sahasiddharthi1&theme=2077" width="100%" />
 </div>
 
-<br/>
+<!-- GITHUB TROPHIES -->
+### GitHub Trophies
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sahasiddharthi1&theme=tokyo-night&hide_border=true&area=true" />
+  <a href="https://github-profile-trophy.vercel.app
+    ?username=sahasiddharthi1&theme=matrix&no-frame=true&column=7">
+    <img src="https://github-profile-trophy.vercel.app
+      ?username=sahasiddharthi1&theme=matrix&no-frame=true&column=7" />
+  </a>
 </div>
 
----
+<!-- ACTIVITY GRAPH -->
+### Contribution Activity Graph
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sahasiddharthi1&color=6C63FF&style=flat-square&label=Profile+Views" />
+  <img src="https://github-readme-activity-graph.vercel.app
+    ?username=sahasiddharthi1&theme=tokyo-night&hide_border=true&area=true" />
+</div>
+
+<!-- CONTRIBUTION SUMMARY CARDS -->
+### Profile Summary Cards
+
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app
+    /api/cards/repos-per-language
+    ?username=sahasiddharthi1&theme=2077" />
+  <img src="https://github-profile-summary-cards.vercel.app
+    /api/cards/most-commit-language
+    ?username=sahasiddharthi1&theme=2077" />
+</div>
+
+<!-- CURRENT FOCUS YAML + CONNECT -->
+## `> cat current-focus.yaml`
+
+```yaml
+learning:
+  - AWS Generative AI patterns
+  - Advanced distributed systems
+  - Go performance optimization
+
+building:
+  - Enterprise AI agent platform at LTIMindtree
+  - Scalable distributed systems with Go
+
+open_to:
+  - Senior Engineering roles
+  - AI/ML Infrastructure positions
+  - Distributed systems challenges
+
+<!-- CONNECT -->
+<div align="center">
+  <a href="mailto:siddharthi.saha@example.com">
+    <img src="https://img.shields.io/badge/Email-D1483B?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/siddharthi-saha-269280259/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://portfolio-phi-mocha-36.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+</div>
+
+<!-- SNAKE ANIMATION -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/.github/workflows/snake.svg" alt="GitHub Snake Animation" />
+</div>
+
+<!-- CAPSULE RENDER FOOTER -->
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api
+    ?type=wave&color=0A0F08&fontColor=CAFF3C
+    &text=%20%Thank%20you%20for%20visiting%20%7C%20Connect%20below%20&animation=fadeIn" />
 </div>
