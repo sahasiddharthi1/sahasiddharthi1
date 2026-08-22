@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="g" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="0" y="0" width="900" height="400" rx="14" fill="#050a14" stroke="#0f2a45" stroke-width="1.5"/>
+<circle cx="22" cy="24" r="5" fill="#ff5f57"/>
+<circle cx="38" cy="24" r="5" fill="#febc2e"/>
+<circle cx="54" cy="24" r="5" fill="#28c840"/>
+<text x="450.0" y="24" dy="4" text-anchor="middle" font-family="monospace" font-size="12" fill="#3d5972">profile_scan.sh &#8212; github.com/sahasiddharthi1</text>
+<line x1="0" y1="42" x2="900" y2="42" stroke="#0f2a45" stroke-width="1"/>
+<circle cx="220" cy="210" r="40" fill="none" stroke="#0a2540" stroke-width="1"/>
+<circle cx="220" cy="210" r="70" fill="none" stroke="#0a2540" stroke-width="1"/>
+<circle cx="220" cy="210" r="100" fill="none" stroke="#0a2540" stroke-width="1"/>
+<circle cx="220" cy="210" r="130" fill="none" stroke="#0a2540" stroke-width="1"/>
+<line x1="90" y1="210" x2="350" y2="210" stroke="#0a2540" stroke-width="1"/>
+<line x1="220" y1="80" x2="220" y2="340" stroke="#0a2540" stroke-width="1"/>
+<defs><radialGradient id="sweep" gradientUnits="userSpaceOnUse" cx="220" cy="210" r="130"><stop offset="0%" stop-color="#00D9FF" stop-opacity="0.55"/><stop offset="100%" stop-color="#00D9FF" stop-opacity="0"/></radialGradient></defs>
+<path d="M220,210 L344.0,170.9 A130,130 0 0 1 344.0,249.1 Z" fill="url(#sweep)"><animateTransform attributeName="transform" type="rotate" from="0 220 210" to="360 220 210" dur="4s" repeatCount="indefinite"/></path>
+<circle cx="199.4" cy="185.2" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="1.1s" repeatCount="indefinite"/></circle>
+<circle cx="236.1" cy="304.9" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.71s" repeatCount="indefinite"/></circle>
+<circle cx="249.5" cy="186.3" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="1.69s" repeatCount="indefinite"/></circle>
+<circle cx="268.8" cy="219.2" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.02s" repeatCount="indefinite"/></circle>
+<circle cx="267.2" cy="217.9" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
+<circle cx="172.1" cy="196.1" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.36s" repeatCount="indefinite"/></circle>
+<circle cx="231.2" cy="181.5" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="3.22s" repeatCount="indefinite"/></circle>
+<circle cx="200.6" cy="152.6" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="0.62s" repeatCount="indefinite"/></circle>
+<circle cx="278.1" cy="194.0" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="0.37s" repeatCount="indefinite"/></circle>
+<circle cx="307.2" cy="270.7" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.41s" repeatCount="indefinite"/></circle>
+<circle cx="253.6" cy="120.4" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.14s" repeatCount="indefinite"/></circle>
+<circle cx="283.2" cy="199.2" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="2.21s" repeatCount="indefinite"/></circle>
+<circle cx="261.0" cy="134.8" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="3.45s" repeatCount="indefinite"/></circle>
+<circle cx="137.4" cy="166.4" r="3" fill="#00D9FF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.08;0.35;0.5;1" dur="4s" begin="0.18s" repeatCount="indefinite"/></circle>
+<circle cx="220" cy="210" r="2.5" fill="#00D9FF"/>
+<text x="400" y="60" font-family="monospace" font-size="13" fill="#00D9FF">&#9656; SUBJECT</text>
+<line x1="400" y1="72" x2="860" y2="72" stroke="#0f2a45" stroke-width="1"/>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="0.3s" fill="freeze"/><text x="400" y="90" font-family="monospace" font-size="13" fill="#3d5972">NAME</text><text x="560" y="90" font-family="monospace" font-size="13" fill="#c3e8ff">SIDDHARTHI SAHA</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="0.58s" fill="freeze"/><text x="400" y="124" font-family="monospace" font-size="13" fill="#3d5972">ROLE</text><text x="560" y="124" font-family="monospace" font-size="13" fill="#c3e8ff">FULL-STACK DEVELOPER</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="0.86s" fill="freeze"/><text x="400" y="158" font-family="monospace" font-size="13" fill="#3d5972">COMPANY</text><text x="560" y="158" font-family="monospace" font-size="13" fill="#c3e8ff">LTIMINDTREE</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="1.14s" fill="freeze"/><text x="400" y="192" font-family="monospace" font-size="13" fill="#3d5972">REPOS</text><text x="560" y="192" font-family="monospace" font-size="13" fill="#c3e8ff">13</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="1.42s" fill="freeze"/><text x="400" y="226" font-family="monospace" font-size="13" fill="#3d5972">FOLLOWERS</text><text x="560" y="226" font-family="monospace" font-size="13" fill="#c3e8ff">1</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="1.7s" fill="freeze"/><text x="400" y="260" font-family="monospace" font-size="13" fill="#3d5972">TOP LANG</text><text x="560" y="260" font-family="monospace" font-size="13" fill="#c3e8ff">TYPESCRIPT</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="1.98s" fill="freeze"/><text x="400" y="294" font-family="monospace" font-size="13" fill="#3d5972">LEETCODE</text><text x="560" y="294" font-family="monospace" font-size="13" fill="#c3e8ff">80%+ SOLVE RATE</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.15" dur="8s" begin="2.26s" fill="freeze"/><text x="400" y="328" font-family="monospace" font-size="13" fill="#3d5972">CONTACT</text><text x="560" y="328" font-family="monospace" font-size="13" fill="#c3e8ff">GITHUB.COM/SAHASIDDHARTHI1</text></g>
+<text x="450.0" y="384" text-anchor="middle" font-family="monospace" font-size="10" fill="#3d5972">Static snapshot &#183; captured Aug 22, 2026</text>
+</svg>
