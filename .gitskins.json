@@ -1,0 +1,11 @@
+{
+  "username": "sahasiddharthi1",
+  "theme": "dracula",
+  "outputDir": ".gitskins",
+  "widgets": [
+    "card",
+    "languages",
+    "streak",
+    "stats"
+  ]
+}
