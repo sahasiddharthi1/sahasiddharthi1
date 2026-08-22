@@ -1,8 +1,3 @@
-<!-- GitSkins Profile Widgets (Free) -->
-![sahasiddharthi1's GitHub profile](.gitskins/card.svg)
-![sahasiddharthi1's most used languages](.gitskins/languages.png)
-![sahasiddharthi1's contribution streak](.gitskins/streak.png)
-![sahasiddharthi1's GitHub stats](.gitskins/stats.png)
 
 <div align="center">
 
