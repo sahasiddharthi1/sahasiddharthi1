@@ -77,7 +77,7 @@ every commit plotted by day and local hour (IST) — night owl or early riser, a
 ## ▸ systems & production projects
 
 **⟨ LedgerForge ⟩** — Blockchain SaaS Platform
-![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![ECDSA](https://img.shields.io/badge/ECDSA-040711?style=flat-square&labelColor=040711&color=00E5FF) ![PoW](https://img.shields.io/badge/PoW-040711?style=flat-square&labelColor=040711&color=00E5FF) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square&labelColor=040711&color=00E5FF) ![JWT](https://img.shields.io/badge/JWT-040711?style=flat-square&logo=jsonwebtokens&logoColor=00E5FF) ![MongoDB](https://img.shields.io/badge/MongoDB-040711?style=flat-square&logo=mongodb&logoColor=00E5FF) ![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF) ![Next.js](https://img.shields.io/badge/Next.js-040711?style=flat-square&logo=nextdotjs&logoColor=00E5FF)
+![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![ECDSA](https://img.shields.io/badge/ECDSA-040711?style=flat-square) ![PoW](https://img.shields.io/badge/PoW-040711?style=flat-square) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square) ![JWT](https://img.shields.io/badge/JWT-040711?style=flat-square&logo=jsonwebtokens&logoColor=00E5FF) ![MongoDB](https://img.shields.io/badge/MongoDB-040711?style=flat-square&logo=mongodb&logoColor=00E5FF) ![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF) ![Next.js](https://img.shields.io/badge/Next.js-040711?style=flat-square&logo=nextdotjs&logoColor=00E5FF)
 
 <details>
 <summary>expand</summary>
@@ -88,7 +88,7 @@ Production-oriented blockchain SaaS end-to-end: Go chain engine (SHA-256, Proof-
 </details>
 
 **⟨ GoKafka ⟩** — Kafka-Inspired Distributed Message Broker · [repo ↗](https://github.com/sahasiddharthi1/go_kafka)
-![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![TCP](https://img.shields.io/badge/TCP-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Gin](https://img.shields.io/badge/Gin-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Goroutines](https://img.shields.io/badge/Goroutines-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Mutexes](https://img.shields.io/badge/Mutexes-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Binary I/O](https://img.shields.io/badge/Binary_I%2FO-040711?style=flat-square&labelColor=040711&color=00E5FF) ![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF)
+![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![TCP](https://img.shields.io/badge/TCP-040711?style=flat-square) ![Gin](https://img.shields.io/badge/Gin-040711?style=flat-square) ![Goroutines](https://img.shields.io/badge/Goroutines-040711?style=flat-square) ![Mutexes](https://img.shields.io/badge/Mutexes-040711?style=flat-square) ![Binary I/O](https://img.shields.io/badge/Binary_I%2FO-040711?style=flat-square) ![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF)
 
 <details>
 <summary>expand</summary>
@@ -99,7 +99,7 @@ Built from scratch in Go, zero external dependencies — custom TCP binary frami
 </details>
 
 **⟨ ShopFlow ⟩** — Distributed E-Commerce Backend + Custom APM · [repo ↗](https://github.com/sahasiddharthi1/djp)
-![Node.js](https://img.shields.io/badge/Node.js-040711?style=flat-square&logo=nodedotjs&logoColor=00E5FF) ![Express](https://img.shields.io/badge/Express-040711?style=flat-square&logo=express&logoColor=00E5FF) ![AsyncLocalStorage](https://img.shields.io/badge/AsyncLocalStorage-040711?style=flat-square&labelColor=040711&color=00E5FF) ![JWT](https://img.shields.io/badge/JWT-040711?style=flat-square&logo=jsonwebtokens&logoColor=00E5FF) ![DLQ](https://img.shields.io/badge/DLQ-040711?style=flat-square&labelColor=040711&color=00E5FF)
+![Node.js](https://img.shields.io/badge/Node.js-040711?style=flat-square&logo=nodedotjs&logoColor=00E5FF) ![Express](https://img.shields.io/badge/Express-040711?style=flat-square&logo=express&logoColor=00E5FF) ![AsyncLocalStorage](https://img.shields.io/badge/AsyncLocalStorage-040711?style=flat-square) ![JWT](https://img.shields.io/badge/JWT-040711?style=flat-square&logo=jsonwebtokens&logoColor=00E5FF) ![DLQ](https://img.shields.io/badge/DLQ-040711?style=flat-square)
 
 <details>
 <summary>expand</summary>
@@ -110,7 +110,7 @@ Partitioned in-memory queue (8 lanes) with autoscaling workers processing 20,000
 </details>
 
 **⟨ TradeStream ⟩** — High-Frequency Crypto Dashboard
-![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-040711?style=flat-square&logo=tailwindcss&logoColor=00E5FF) ![Web Workers](https://img.shields.io/badge/Web_Workers-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Chart.js](https://img.shields.io/badge/Chart.js-040711?style=flat-square&logo=chartdotjs&logoColor=00E5FF)
+![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-040711?style=flat-square&logo=tailwindcss&logoColor=00E5FF) ![Web Workers](https://img.shields.io/badge/Web_Workers-040711?style=flat-square) ![Chart.js](https://img.shields.io/badge/Chart.js-040711?style=flat-square&logo=chartdotjs&logoColor=00E5FF)
 
 <details>
 <summary>expand</summary>
@@ -125,7 +125,7 @@ Real-time dashboard for 50+ concurrent crypto assets with sub-second WebSocket u
 ## ▸ ai agent projects
 
 **⟨ CarouDeal ⟩** — 3-tier buy-side shopping agent
-![JavaScript](https://img.shields.io/badge/JavaScript-040711?style=flat-square&logo=javascript&logoColor=00E5FF) ![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![Python](https://img.shields.io/badge/Python-040711?style=flat-square&logo=python&logoColor=00E5FF) ![LangGraph](https://img.shields.io/badge/LangGraph-040711?style=flat-square&labelColor=040711&color=00E5FF)
+![JavaScript](https://img.shields.io/badge/JavaScript-040711?style=flat-square&logo=javascript&logoColor=00E5FF) ![Go](https://img.shields.io/badge/Go-040711?style=flat-square&logo=go&logoColor=00E5FF) ![Python](https://img.shields.io/badge/Python-040711?style=flat-square&logo=python&logoColor=00E5FF) ![LangGraph](https://img.shields.io/badge/LangGraph-040711?style=flat-square)
 
 <details>
 <summary>expand</summary>
@@ -136,7 +136,7 @@ Vanilla-JS UI → Go REST API → Python LangGraph 5-node state machine (underst
 </details>
 
 **⟨ Free Voice Agent ⟩** — browser-native voice agent
-![Web Speech API](https://img.shields.io/badge/Web_Speech_API-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Ollama](https://img.shields.io/badge/Ollama-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Gemini](https://img.shields.io/badge/Gemini-040711?style=flat-square&labelColor=040711&color=00E5FF) ![RAG](https://img.shields.io/badge/RAG-040711?style=flat-square&labelColor=040711&color=00E5FF)
+![Web Speech API](https://img.shields.io/badge/Web_Speech_API-040711?style=flat-square) ![Ollama](https://img.shields.io/badge/Ollama-040711?style=flat-square) ![Gemini](https://img.shields.io/badge/Gemini-040711?style=flat-square) ![RAG](https://img.shields.io/badge/RAG-040711?style=flat-square)
 
 <details>
 <summary>expand</summary>
@@ -147,7 +147,7 @@ Web Speech API STT/TTS on a from-scratch `BaseLLM` abstraction — one `complete
 </details>
 
 **⟨ CodeGraph Agent ⟩** — natural-language code exploration client
-![Python](https://img.shields.io/badge/Python-040711?style=flat-square&logo=python&logoColor=00E5FF) ![JSON-RPC](https://img.shields.io/badge/JSON--RPC-040711?style=flat-square&labelColor=040711&color=00E5FF)
+![Python](https://img.shields.io/badge/Python-040711?style=flat-square&logo=python&logoColor=00E5FF) ![JSON-RPC](https://img.shields.io/badge/JSON--RPC-040711?style=flat-square)
 
 <details>
 <summary>expand</summary>
@@ -168,10 +168,10 @@ Python client wrapping `codegraph serve mcp` over JSON-RPC, with CLI and REPL mo
 ![React](https://img.shields.io/badge/React-040711?style=flat-square&logo=react&logoColor=00E5FF) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-040711?style=flat-square&logo=redux&logoColor=00E5FF) ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-040711?style=flat-square&logo=reacthookform&logoColor=00E5FF) ![Material UI](https://img.shields.io/badge/Material_UI-040711?style=flat-square&logo=mui&logoColor=00E5FF) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-040711?style=flat-square&logo=tailwindcss&logoColor=00E5FF) ![Chart.js](https://img.shields.io/badge/Chart.js-040711?style=flat-square&logo=chartdotjs&logoColor=00E5FF)
 
 **Backend**
-![Node.js](https://img.shields.io/badge/Node.js-040711?style=flat-square&logo=nodedotjs&logoColor=00E5FF) ![Express](https://img.shields.io/badge/Express-040711?style=flat-square&logo=express&logoColor=00E5FF) ![GraphQL](https://img.shields.io/badge/GraphQL-040711?style=flat-square&logo=graphql&logoColor=00E5FF) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Gin](https://img.shields.io/badge/Gin-040711?style=flat-square&labelColor=040711&color=00E5FF) ![JSON-RPC](https://img.shields.io/badge/JSON--RPC-040711?style=flat-square&labelColor=040711&color=00E5FF)
+![Node.js](https://img.shields.io/badge/Node.js-040711?style=flat-square&logo=nodedotjs&logoColor=00E5FF) ![Express](https://img.shields.io/badge/Express-040711?style=flat-square&logo=express&logoColor=00E5FF) ![GraphQL](https://img.shields.io/badge/GraphQL-040711?style=flat-square&logo=graphql&logoColor=00E5FF) ![WebSockets](https://img.shields.io/badge/WebSockets-040711?style=flat-square) ![Gin](https://img.shields.io/badge/Gin-040711?style=flat-square) ![JSON-RPC](https://img.shields.io/badge/JSON--RPC-040711?style=flat-square)
 
 **Cloud & AI**
-![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-040711?style=flat-square&logo=amazonaws&logoColor=00E5FF) ![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-040711?style=flat-square&logo=microsoftazure&logoColor=00E5FF) ![LangGraph](https://img.shields.io/badge/LangGraph-040711?style=flat-square&labelColor=040711&color=00E5FF) ![RAG](https://img.shields.io/badge/RAG-040711?style=flat-square&labelColor=040711&color=00E5FF) ![MCP](https://img.shields.io/badge/MCP-040711?style=flat-square&labelColor=040711&color=00E5FF) ![Docker](https://img.shields.io/badge/Docker-040711?style=flat-square&logo=docker&logoColor=00E5FF)
+![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-040711?style=flat-square&logo=amazonaws&logoColor=00E5FF) ![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-040711?style=flat-square&logo=microsoftazure&logoColor=00E5FF) ![LangGraph](https://img.shields.io/badge/LangGraph-040711?style=flat-square) ![RAG](https://img.shields.io/badge/RAG-040711?style=flat-square) ![MCP](https://img.shields.io/badge/MCP-040711?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-040711?style=flat-square&logo=docker&logoColor=00E5FF)
 
 **Tools**
 ![Git](https://img.shields.io/badge/Git-040711?style=flat-square&logo=git&logoColor=00E5FF) ![Postman](https://img.shields.io/badge/Postman-040711?style=flat-square&logo=postman&logoColor=00E5FF) ![Linux](https://img.shields.io/badge/Linux-040711?style=flat-square&logo=linux&logoColor=00E5FF) ![MySQL](https://img.shields.io/badge/MySQL-040711?style=flat-square&logo=mysql&logoColor=00E5FF)
