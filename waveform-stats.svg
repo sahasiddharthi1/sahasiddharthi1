@@ -4,5 +4,5 @@
   <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
 </circle>
 <text x="450.0" y="140.0" text-anchor="middle" font-family="monospace" font-size="13" fill="#d6f0ff">Run the workflow once to populate this panel</text>
-<text x="450.0" y="160.0" text-anchor="middle" font-family="monospace" font-size="10" fill="#3a5570">Actions tab &#8594; Update GitHub tenure waveform &#8594; Run workflow</text>
+<text x="450.0" y="160.0" text-anchor="middle" font-family="monospace" font-size="10" fill="#3a5570">Actions tab &#8594; Update commit-time-of-day waveform &#8594; Run workflow</text>
 </svg>

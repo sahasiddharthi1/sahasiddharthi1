@@ -28,7 +28,7 @@
 
 <sub align="center">
 
-how long I've actually been building on GitHub — real account age, pulled live from the API and recalculated on every scheduled refresh.
+when I actually code, by local commit hour across every repo — night owl, early riser, or somewhere in between, straight from real commit timestamps.
 
 </sub>
 

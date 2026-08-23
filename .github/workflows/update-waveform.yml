@@ -1,4 +1,4 @@
-name: Update GitHub tenure waveform
+name: Update commit-time-of-day waveform
 
 on:
   schedule:
