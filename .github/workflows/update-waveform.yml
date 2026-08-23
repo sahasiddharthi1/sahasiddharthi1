@@ -1,14 +1,9 @@
-name: Update waveform stats
+name: Update waveform from live GitHub projects
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'stats.json'
-      - 'scripts/generate_waveform.py'
   schedule:
-    - cron: '0 6 * * *'   # daily safety-net run, in case the manual trigger is missed
-  workflow_dispatch: {}    # lets you trigger it by hand from the Actions tab
+    - cron: '0 6 * * *'   # daily -- picks up any repo you pushed in the last 24h
+  workflow_dispatch: {}    # manual "run now" button in the Actions tab, for right after a new push
 
 permissions:
   contents: write
@@ -23,7 +18,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Regenerate waveform-stats.svg from stats.json
+      - name: Regenerate waveform-stats.svg from live repo data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_waveform.py
 
       - name: Commit and push if changed
@@ -34,6 +31,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: refresh waveform-stats.svg [skip ci]"
+            git commit -m "chore: refresh waveform-stats.svg from live repos [skip ci]"
             git push
           fi

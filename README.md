@@ -8,6 +8,10 @@
 
 <br/><br/>
 
+<img src="https://komarev.com/ghpvc/?username=sahasiddharthi1&color=00E5FF&style=for-the-badge&label=PROFILE+VIEWS" />
+
+<br/><br/>
+
 <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/tech-ticker.svg" width="900" />
 
 </div>
@@ -24,11 +28,13 @@
 
 <sub align="center">
 
-six real numbers, pulled straight from production: agent-creation speed and marketplace TTI at LTIMindtree, GoKafka's sustained throughput and test coverage, ShopFlow's job throughput, and Foundry's active user base.
+your 6 most recently pushed repos, pulled live from the GitHub API — push a new project and it appears here on the next refresh, no editing required.
 
 </sub>
 
 <br/>
+
+*Live view count above updates on every real page load — that's a genuinely real-time counter, not something on the daily refresh cycle below.*
 
 ## ▸ experience
 
@@ -143,8 +149,4 @@ DSA · Operating Systems · Database Management · Web Technologies
 
 <div align="center">
   <img src="https://streak-stats.demolab.com/?user=sahasiddharthi1&hide_border=true&background=040711&ring=00E5FF&fire=00E5FF&currStreakLabel=00E5FF&sideLabels=d6f0ff&currStreakNum=d6f0ff&sideNums=d6f0ff&dates=3a5570" />
-</div>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sahasiddharthi1&color=00E5FF&style=flat-square&label=views" />
 </div>
