@@ -1,4 +1,4 @@
-name: Update waveform from live GitHub projects
+name: Update GitHub tenure waveform
 
 on:
   schedule:

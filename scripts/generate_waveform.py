@@ -1,17 +1,15 @@
 import json, os, sys, urllib.request, urllib.error
+from datetime import datetime, timezone
 
 USERNAME = "sahasiddharthi1"
-MAX_PROJECTS = 6
 
-def fetch_repos():
-    url = f"https://api.github.com/users/{USERNAME}/repos?sort=pushed&per_page=100"
+def _get(url, token):
     req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
-    token = os.environ.get("GITHUB_TOKEN")
     if token:
         req.add_header("Authorization", f"Bearer {token}")
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read())
+            return json.loads(resp.read())
     except urllib.error.HTTPError as e:
         body = e.read().decode(errors="replace")
         if e.code == 403 and "rate limit" in body.lower():
@@ -19,13 +17,18 @@ def fetch_repos():
                 "GitHub API rate limit hit. If this happens inside the Action, "
                 "confirm the GITHUB_TOKEN env var is actually being passed to this step."
             ) from e
-        raise RuntimeError(f"GitHub API HTTP {e.code}: {body}") from e
-    if isinstance(data, dict):
-        raise RuntimeError(f"GitHub API error: {data.get('message', data)}")
-    # exclude the profile repo itself -- it isn't a "project", it's this README's home
-    data = [r for r in data if r["name"].lower() != USERNAME.lower() and not r.get("fork")]
-    data.sort(key=lambda r: r["pushed_at"], reverse=True)
-    return data[:MAX_PROJECTS]
+        raise RuntimeError(f"GitHub API HTTP {e.code} for {url}: {body}") from e
+
+def fetch_tenure():
+    token = os.environ.get("GITHUB_TOKEN")
+    user = _get(f"https://api.github.com/users/{USERNAME}", token)
+    if isinstance(user, dict) and "message" in user and "created_at" not in user:
+        raise RuntimeError(f"GitHub API error: {user.get('message')}")
+    created = datetime.fromisoformat(user["created_at"].replace("Z", "+00:00"))
+    now = datetime.now(timezone.utc)
+    months_total = (now.year - created.year) * 12 + (now.month - created.month)
+    years, months = divmod(months_total, 12)
+    return created, now, years, months
 
 W, H = 900, 240
 BG = "#040711"
@@ -33,30 +36,16 @@ BLUE = "#00E5FF"
 DIM = "#3a5570"
 TEXT = "#d6f0ff"
 
-def build_svg(repos):
-    baseline = 150
-    n = len(repos)
-    if n == 0:
-        raise RuntimeError("No eligible repos found to plot")
-    seg = W / (n + 0.5)
-    pts = []
-    for i in range(n):
-        x = seg * (i + 0.75)
-        peak_y = 60 if i % 2 == 0 else 90
-        pts.append((x, peak_y))
+def build_svg(created, now, years, months):
+    line_y = 150
+    x0, x1 = 90, W - 90
 
-    d = f"M0,{baseline} "
-    prev_x = 0
-    for x, py in pts:
-        c1x = prev_x + (x - prev_x) * 0.35
-        c2x = prev_x + (x - prev_x) * 0.65
-        d += f"C{c1x:.1f},{baseline} {c2x:.1f},{py} {x:.1f},{py} "
-        nxt = x + seg * 0.5
-        c1x2 = x + (nxt - x) * 0.35
-        c2x2 = x + (nxt - x) * 0.65
-        d += f"C{c1x2:.1f},{py} {c2x2:.1f},{baseline} {nxt:.1f},{baseline} "
-        prev_x = nxt
-    d += f"L{W},{baseline}"
+    if years and months:
+        duration_str = f"{years} YR {months} MO"
+    elif years:
+        duration_str = f"{years} YEAR{'S' if years != 1 else ''}"
+    else:
+        duration_str = f"{months} MONTH{'S' if months != 1 else ''}"
 
     svg = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('''<defs>
@@ -66,29 +55,44 @@ def build_svg(repos):
   </filter>
 </defs>''')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="16" fill="{BG}" stroke="#0d2847" stroke-width="1.5"/>')
-    svg.append(f'<line x1="20" y1="{baseline}" x2="{W-20}" y2="{baseline}" stroke="#0d2847" stroke-width="1" stroke-dasharray="4 4"/>')
 
-    DASH = 4000
-    svg.append(f'<path d="{d}" fill="none" stroke="{BLUE}" stroke-width="2.5" filter="url(#glow)" '
-               f'stroke-dasharray="{DASH}" stroke-dashoffset="{DASH}">'
-               f'<animate attributeName="stroke-dashoffset" values="{DASH};0;0;{DASH}" '
-               f'keyTimes="0;0.45;0.9;1" dur="9s" begin="0s" repeatCount="indefinite"/>'
-               f'</path>')
+    # endpoint labels
+    svg.append(f'<text x="{x0}" y="{line_y-46}" text-anchor="middle" font-family="monospace" font-size="11" fill="{DIM}">ACCOUNT CREATED</text>')
+    svg.append(f'<text x="{x0}" y="{line_y-30}" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="13" fill="{TEXT}">{created.strftime("%b %Y").upper()}</text>')
+    svg.append(f'<text x="{x1}" y="{line_y-46}" text-anchor="middle" font-family="monospace" font-size="11" fill="{DIM}">TODAY</text>')
+    svg.append(f'<text x="{x1}" y="{line_y-30}" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="13" fill="{TEXT}">{now.strftime("%b %Y").upper()}</text>')
 
-    for i, ((x, py), repo) in enumerate(zip(pts, repos)):
-        name = repo["name"]
-        lang = repo["language"] or "—"
-        begin = round(0.45 * 9 * (i + 1) / n, 2)
-        svg.append(f'<circle cx="{x:.1f}" cy="{py}" r="3.5" fill="{BLUE}" filter="url(#glow)" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/></circle>')
-        label_y = py - 16 if py < baseline else py + 26
-        display_name = name if len(name) <= 14 else name[:13] + "…"
-        svg.append(f'<text x="{x:.1f}" y="{label_y}" text-anchor="middle" font-family="monospace" font-weight="bold" '
-                   f'font-size="15" fill="{TEXT}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/>{display_name}</text>')
-        svg.append(f'<text x="{x:.1f}" y="{label_y+16}" text-anchor="middle" font-family="monospace" font-size="9.5" '
-                   f'fill="{DIM}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/>{lang}</text>')
+    # base track
+    svg.append(f'<line x1="{x0}" y1="{line_y}" x2="{x1}" y2="{line_y}" stroke="#0d2847" stroke-width="3" stroke-linecap="round"/>')
+
+    # animated draw-on progress line
+    track_len = x1 - x0
+    svg.append(f'<line x1="{x0}" y1="{line_y}" x2="{x1}" y2="{line_y}" stroke="{BLUE}" stroke-width="3" stroke-linecap="round" '
+               f'filter="url(#glow)" stroke-dasharray="{track_len}" stroke-dashoffset="{track_len}">'
+               f'<animate attributeName="stroke-dashoffset" values="{track_len};0;0;{track_len}" '
+               f'keyTimes="0;0.5;0.85;1" dur="9s" begin="0s" repeatCount="indefinite"/></line>')
+
+    # endpoint dots
+    for x in (x0, x1):
+        svg.append(f'<circle cx="{x}" cy="{line_y}" r="4" fill="{BLUE}" filter="url(#glow)"/>')
+
+    # year tick marks along the track, purely for scale reference
+    total_days = (now - created).days
+    if total_days > 0:
+        d = created
+        while d < now:
+            frac = (d - created).days / total_days
+            tx = x0 + frac * track_len
+            if x0 + 20 < tx < x1 - 20:
+                svg.append(f'<line x1="{tx:.1f}" y1="{line_y-6}" x2="{tx:.1f}" y2="{line_y+6}" stroke="{DIM}" stroke-width="1.5"/>')
+                svg.append(f'<text x="{tx:.1f}" y="{line_y+22}" text-anchor="middle" font-family="monospace" font-size="9.5" fill="{DIM}">{d.year}</text>')
+            d = d.replace(year=d.year + 1)
+
+    # headline duration callout
+    svg.append(f'<text x="{W/2}" y="{line_y+62}" text-anchor="middle" font-family="monospace" font-weight="bold" '
+               f'font-size="22" fill="{BLUE}" filter="url(#glow)" opacity="0">'
+               f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.55;0.75" dur="9s" begin="0s" fill="freeze"/>'
+               f'{duration_str} ON GITHUB</text>')
 
     svg.append('</svg>')
     return "\n".join(svg)
@@ -96,8 +100,8 @@ def build_svg(repos):
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     out_path = os.path.join(script_dir, "..", "waveform-stats.svg")
-    repos = fetch_repos()
-    svg_content = build_svg(repos)
+    created, now, years, months = fetch_tenure()
+    svg_content = build_svg(created, now, years, months)
     with open(out_path, "w") as f:
         f.write(svg_content)
-    print(f"wrote {out_path} from {len(repos)} live repos: {[r['name'] for r in repos]}")
+    print(f"wrote {out_path} -- account created {created.date()}, tenure: {years}y {months}m")

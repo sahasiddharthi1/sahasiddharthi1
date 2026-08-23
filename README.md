@@ -28,7 +28,7 @@
 
 <sub align="center">
 
-your 6 most recently pushed repos, pulled live from the GitHub API — push a new project and it appears here on the next refresh, no editing required.
+how long I've actually been building on GitHub — real account age, pulled live from the API and recalculated on every scheduled refresh.
 
 </sub>
 
