@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect x="0" y="0" width="900" height="240" rx="16" fill="#040711" stroke="#0d2847" stroke-width="1.5"/>
+<line x1="20" y1="150" x2="880" y2="150" stroke="#0d2847" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M0,150 C36.3,150 67.5,60 103.8,60 C128.1,60 148.8,150 173.1,150 C197.3,150 218.1,90 242.3,90 C266.5,90 287.3,150 311.5,150 C335.8,150 356.5,60 380.8,60 C405.0,60 425.8,150 450.0,150 C474.2,150 495.0,90 519.2,90 C543.5,90 564.2,150 588.5,150 C612.7,150 633.5,60 657.7,60 C681.9,60 702.7,150 726.9,150 C751.2,150 771.9,90 796.2,90 C820.4,90 841.2,150 865.4,150 L900,150" fill="none" stroke="#00E5FF" stroke-width="2.5" filter="url(#glow)" stroke-dasharray="4000" stroke-dashoffset="4000"><animate attributeName="stroke-dashoffset" values="4000;0;0;4000" keyTimes="0;0.45;0.9;1" dur="9s" begin="0s" repeatCount="indefinite"/></path>
+<circle cx="103.8" cy="60" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="0.67s" fill="freeze"/></circle>
+<text x="103.8" y="44" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="0.67s" fill="freeze"/>500+</text>
+<text x="103.8" y="60" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="0.67s" fill="freeze"/>internal users</text>
+<circle cx="242.3" cy="90" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.35s" fill="freeze"/></circle>
+<text x="242.3" y="74" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.35s" fill="freeze"/>40%</text>
+<text x="242.3" y="90" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.35s" fill="freeze"/>faster agent creation</text>
+<circle cx="380.8" cy="60" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/></circle>
+<text x="380.8" y="44" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/>60%</text>
+<text x="380.8" y="60" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/>TTI improvement</text>
+<circle cx="519.2" cy="90" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.7s" fill="freeze"/></circle>
+<text x="519.2" y="74" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.7s" fill="freeze"/>20K+</text>
+<text x="519.2" y="90" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.7s" fill="freeze"/>jobs / min</text>
+<circle cx="657.7" cy="60" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.38s" fill="freeze"/></circle>
+<text x="657.7" y="44" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.38s" fill="freeze"/>2K+</text>
+<text x="657.7" y="60" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.38s" fill="freeze"/>msg / sec</text>
+<circle cx="796.2" cy="90" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/></circle>
+<text x="796.2" y="74" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/>90%</text>
+<text x="796.2" y="90" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/>Go test coverage</text>
+</svg>

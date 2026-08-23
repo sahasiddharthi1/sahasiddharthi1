@@ -1,0 +1,8 @@
+[
+  {"value": "500+", "label": "internal users"},
+  {"value": "40%",  "label": "faster agent creation"},
+  {"value": "60%",  "label": "TTI improvement"},
+  {"value": "20K+", "label": "jobs / min"},
+  {"value": "2K+",  "label": "msg / sec"},
+  {"value": "90%",  "label": "Go test coverage"}
+]
