@@ -1,0 +1,66 @@
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect x="0" y="0" width="960" height="300" rx="16" fill="#040711" stroke="#0d2847" stroke-width="1.5"/>
+<line x1="60" y1="30.0" x2="930" y2="30.0" stroke="#0d2847" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="50" y="33.0" text-anchor="end" font-family="monospace" font-size="9.5" fill="#3a5570">12AM</text>
+<line x1="60" y1="85.0" x2="930" y2="85.0" stroke="#0d2847" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="50" y="88.0" text-anchor="end" font-family="monospace" font-size="9.5" fill="#3a5570">6AM</text>
+<line x1="60" y1="140.0" x2="930" y2="140.0" stroke="#0d2847" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="50" y="143.0" text-anchor="end" font-family="monospace" font-size="9.5" fill="#3a5570">12PM</text>
+<line x1="60" y1="195.0" x2="930" y2="195.0" stroke="#0d2847" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="50" y="198.0" text-anchor="end" font-family="monospace" font-size="9.5" fill="#3a5570">6PM</text>
+<line x1="60" y1="250.0" x2="930" y2="250.0" stroke="#0d2847" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="50" y="253.0" text-anchor="end" font-family="monospace" font-size="9.5" fill="#3a5570">12AM</text>
+<line x1="89.0" y1="30" x2="89.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="89.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/25</text>
+<line x1="147.0" y1="30" x2="147.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="147.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/26</text>
+<line x1="205.0" y1="30" x2="205.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="205.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/27</text>
+<line x1="263.0" y1="30" x2="263.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="263.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/28</text>
+<line x1="321.0" y1="30" x2="321.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="321.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/29</text>
+<line x1="379.0" y1="30" x2="379.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="379.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/30</text>
+<line x1="437.0" y1="30" x2="437.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="437.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">7/31</text>
+<line x1="495.0" y1="30" x2="495.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="495.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/1</text>
+<line x1="553.0" y1="30" x2="553.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="553.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/2</text>
+<line x1="611.0" y1="30" x2="611.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="611.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/3</text>
+<line x1="669.0" y1="30" x2="669.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="669.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/4</text>
+<line x1="727.0" y1="30" x2="727.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="727.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/5</text>
+<line x1="785.0" y1="30" x2="785.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="785.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/6</text>
+<line x1="843.0" y1="30" x2="843.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="843.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/7</text>
+<line x1="901.0" y1="30" x2="901.0" y2="250" stroke="#0d2847" stroke-width="0.5"/>
+<text x="901.0" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a5570">8/8</text>
+<path d="M437.0,180.8 L437.0,183.5 L437.0,186.1 L437.0,190.3 L437.0,190.7 L437.0,239.9 L437.0,244.3 L437.0,245.1 L437.0,248.3 L437.0,249.2 L495.0,40.7 L495.0,41.6 L611.0,45.9 L611.0,50.8" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.55" stroke-dasharray="456" stroke-dashoffset="456"><animate attributeName="stroke-dashoffset" values="456;0" dur="2.5s" begin="0s" fill="freeze"/></path>
+<circle cx="437.0" cy="180.8" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.0s" fill="freeze"/></circle>
+<circle cx="437.0" cy="183.5" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.05s" fill="freeze"/></circle>
+<circle cx="437.0" cy="186.1" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.1s" fill="freeze"/></circle>
+<circle cx="437.0" cy="190.3" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.15s" fill="freeze"/></circle>
+<circle cx="437.0" cy="190.7" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.2s" fill="freeze"/></circle>
+<circle cx="437.0" cy="239.9" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.25s" fill="freeze"/></circle>
+<circle cx="437.0" cy="244.3" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.3s" fill="freeze"/></circle>
+<circle cx="437.0" cy="245.1" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.35s" fill="freeze"/></circle>
+<circle cx="437.0" cy="248.3" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.4s" fill="freeze"/></circle>
+<circle cx="437.0" cy="249.2" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.45s" fill="freeze"/></circle>
+<circle cx="495.0" cy="40.7" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.5s" fill="freeze"/></circle>
+<circle cx="495.0" cy="41.6" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.55s" fill="freeze"/></circle>
+<circle cx="611.0" cy="45.9" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.6s" fill="freeze"/></circle>
+<circle cx="611.0" cy="50.8" r="4" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="0.65s" fill="freeze"/></circle>
+<text x="60" y="18" font-family="monospace" font-size="11" fill="#d6f0ff">Jul 25 – Aug 8, 2026</text>
+<text x="930" y="18" text-anchor="end" font-family="monospace" font-size="10" fill="#3a5570">14 commits &#183; local time (IST, UTC+5:30)</text>
+</svg>
