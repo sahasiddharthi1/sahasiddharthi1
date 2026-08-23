@@ -1,13 +1,15 @@
 import json, os, urllib.request, urllib.error
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 USERNAME = "sahasiddharthi1"
-BUCKETS = [
-    ("NIGHT",     0, 6,  "12AM\u20136AM"),
-    ("MORNING",   6, 12, "6AM\u201312PM"),
-    ("AFTERNOON", 12, 18, "12PM\u20136PM"),
-    ("EVENING",   18, 24, "6PM\u201312AM"),
-]
+DAYS_PER_WINDOW = 15
+NUM_WINDOWS = 2   # current 15 days + previous 15 days = 30 days of history total
+
+# GitHub's commit API returns UTC only -- no per-commit local offset is exposed without
+# one extra API call per commit, which isn't practical at this scale. This is a fixed,
+# documented assumption instead of silently mislabeling UTC hours as local ones.
+# Based in Hyderabad, India per resume -- change if that's ever not accurate.
+LOCAL_UTC_OFFSET = timedelta(hours=5, minutes=30)
 
 def _get(url, token):
     req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
@@ -23,128 +25,128 @@ def _get(url, token):
                 "GitHub API rate limit hit. If this happens inside the Action, "
                 "confirm the GITHUB_TOKEN env var is actually being passed to this step."
             ) from e
-        # a single repo's commit list can 409 (empty repo) or 404 -- skip, don't crash the whole run
         if e.code in (404, 409):
             return []
         raise RuntimeError(f"GitHub API HTTP {e.code} for {url}: {body}") from e
 
-def fetch_commit_hours():
+def fetch_local_commit_times():
     token = os.environ.get("GITHUB_TOKEN")
     repos = _get(f"https://api.github.com/users/{USERNAME}/repos?per_page=100", token)
     if isinstance(repos, dict):
         raise RuntimeError(f"GitHub API error: {repos.get('message', repos)}")
     repos = [r for r in repos if r["name"].lower() != USERNAME.lower() and not r.get("fork")]
 
-    hours = []
+    local_times = []
     for r in repos:
         commits = _get(f"https://api.github.com/repos/{USERNAME}/{r['name']}/commits?per_page=100", token)
         if not isinstance(commits, list):
             continue
         for c in commits:
             try:
-                # NOTE: GitHub's API preserves the ORIGINAL git author timezone offset
-                # (e.g. "+05:30"), it does not force-convert to UTC -- so parsing this
-                # with fromisoformat and reading .hour gives the committer's local hour,
-                # not a UTC-shifted one. Verified against GitHub's documented commit
-                # object format; could not re-confirm live this session (rate-limited).
-                date_str = c["commit"]["author"]["date"]
-                dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-                hours.append(dt.hour)
+                utc_dt = datetime.fromisoformat(c["commit"]["author"]["date"].replace("Z", "+00:00"))
+                local_times.append(utc_dt + LOCAL_UTC_OFFSET)
             except (KeyError, ValueError):
                 continue
+    return local_times
 
-    if not hours:
-        raise RuntimeError("No commit timestamps found across any repo")
-
-    counts = {name: 0 for name, *_ in BUCKETS}
-    for h in hours:
-        for name, start, end, _ in BUCKETS:
-            if start <= h < end:
-                counts[name] += 1
-                break
-
-    total = len(hours)
-    usage = [(name, counts[name] / total * 100, label) for name, _, _, label in BUCKETS]
-    return usage, total
-
-W, H = 900, 240
+W, H = 960, 300
 BG = "#040711"
 BLUE = "#00E5FF"
 DIM = "#3a5570"
+GRID = "#0d2847"
 TEXT = "#d6f0ff"
 
-def build_svg(usage, total_commits):
-    """usage: list of (bucket_name, percent, time_label), one per BUCKETS entry, in NIGHT->EVENING order."""
-    baseline = H - 46
-    top_margin = 58
-    max_pct = max(p for _, p, _ in usage) or 1
-    n = len(usage)
-    seg = W / (n + 0.5)
+def build_scatter_svg(local_times, window_index=0, today=None):
+    """window_index=0 -> most recent DAYS_PER_WINDOW days; 1 -> the DAYS_PER_WINDOW before that; etc."""
+    if today is None:
+        today = datetime.now(timezone.utc) + LOCAL_UTC_OFFSET
+    today_date = today.date()
 
-    pts = []
-    for i, (name, p, label) in enumerate(usage):
-        x = seg * (i + 0.75)
-        peak_y = baseline - (p / max_pct) * (baseline - top_margin)
-        pts.append((x, peak_y, name, p, label))
+    window_end = today_date - timedelta(days=DAYS_PER_WINDOW * window_index)
+    days = [window_end - timedelta(days=i) for i in range(DAYS_PER_WINDOW - 1, -1, -1)]
 
-    d = f"M0,{baseline} "
-    prev_x, prev_y = 0, baseline
-    for x, py, *_ in pts:
-        c1x = prev_x + (x - prev_x) * 0.4
-        c2x = prev_x + (x - prev_x) * 0.6
-        d += f"C{c1x:.1f},{prev_y:.1f} {c2x:.1f},{py:.1f} {x:.1f},{py:.1f} "
-        prev_x, prev_y = x, py
-    nxt = W
-    c1x = prev_x + (nxt - prev_x) * 0.4
-    c2x = prev_x + (nxt - prev_x) * 0.6
-    d += f"C{c1x:.1f},{prev_y:.1f} {c2x:.1f},{baseline} {nxt:.1f},{baseline}"
+    plot_left, plot_right = 60, W - 30
+    plot_top, plot_bottom = 30, H - 50
+    col_w = (plot_right - plot_left) / DAYS_PER_WINDOW
+
+    def x_for(day_idx):
+        return plot_left + col_w * (day_idx + 0.5)
+
+    def y_for(hour_float):
+        return plot_top + (hour_float / 24) * (plot_bottom - plot_top)
 
     svg = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('''<defs>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="2.5" result="b"/>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
     <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
-  </linearGradient>
 </defs>''')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="16" fill="{BG}" stroke="#0d2847" stroke-width="1.5"/>')
-    svg.append(f'<line x1="20" y1="{baseline}" x2="{W-20}" y2="{baseline}" stroke="#0d2847" stroke-width="1" stroke-dasharray="4 4"/>')
-    svg.append(f'<path d="{d} L{W},{H} L0,{H} Z" fill="url(#fill)" opacity="0">'
-               f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.4;0.6" dur="9s" begin="0s" fill="freeze"/></path>')
 
-    DASH = 4000
-    svg.append(f'<path d="{d}" fill="none" stroke="{BLUE}" stroke-width="2.5" filter="url(#glow)" '
-               f'stroke-dasharray="{DASH}" stroke-dashoffset="{DASH}">'
-               f'<animate attributeName="stroke-dashoffset" values="{DASH};0;0;{DASH}" '
-               f'keyTimes="0;0.45;0.9;1" dur="9s" begin="0s" repeatCount="indefinite"/></path>')
+    # hour gridlines + labels (y axis)
+    for h, label in [(0, "12AM"), (6, "6AM"), (12, "12PM"), (18, "6PM"), (24, "12AM")]:
+        y = y_for(h)
+        svg.append(f'<line x1="{plot_left}" y1="{y:.1f}" x2="{plot_right}" y2="{y:.1f}" stroke="{GRID}" stroke-width="1" stroke-dasharray="3 4"/>')
+        svg.append(f'<text x="{plot_left-10}" y="{y+3:.1f}" text-anchor="end" font-family="monospace" font-size="9.5" fill="{DIM}">{label}</text>')
 
-    for i, (x, py, name, p, label) in enumerate(pts):
-        begin = round(0.45 * 9 * (i + 1) / n, 2)
-        svg.append(f'<circle cx="{x:.1f}" cy="{py:.1f}" r="3.5" fill="{BLUE}" filter="url(#glow)" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/></circle>')
-        svg.append(f'<text x="{x:.1f}" y="{py-33}" text-anchor="middle" font-family="monospace" font-weight="bold" '
-                   f'font-size="14" fill="{TEXT}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/>{name}</text>')
-        svg.append(f'<text x="{x:.1f}" y="{py-19}" text-anchor="middle" font-family="monospace" font-size="9.5" '
-                   f'fill="{DIM}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/>{label}</text>')
-        svg.append(f'<text x="{x:.1f}" y="{py-6}" text-anchor="middle" font-family="monospace" font-size="11" '
-                   f'fill="{BLUE}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="{begin}s" fill="freeze"/>{p:.0f}%</text>')
+    # day columns + labels (x axis)
+    for i, day in enumerate(days):
+        x = x_for(i)
+        svg.append(f'<line x1="{x:.1f}" y1="{plot_top}" x2="{x:.1f}" y2="{plot_bottom}" stroke="{GRID}" stroke-width="0.5"/>')
+        label = day.strftime("%-m/%-d") if os.name != "nt" else day.strftime("%m/%d").lstrip("0")
+        svg.append(f'<text x="{x:.1f}" y="{plot_bottom+18}" text-anchor="middle" font-family="monospace" font-size="9" fill="{DIM}">{label}</text>')
 
-    svg.append(f'<text x="{W-24}" y="{H-14}" text-anchor="end" font-family="monospace" font-size="9" fill="{DIM}">'
-               f'based on {total_commits} recent commits, local commit time</text>')
+    # commits in true chronological order (not just by day) so the connecting line
+    # reads as a single continuous path through the whole window
+    day_index = {d: i for i, d in enumerate(days)}
+    dated_points = [dt for dt in local_times if dt.date() in day_index]
+    dated_points.sort()
+    points = [(day_index[dt.date()], dt.hour + dt.minute / 60) for dt in dated_points]
+
+    # continuous but NOT smoothed -- straight polyline segments between points, no bezier
+    if len(points) >= 2:
+        coords = [(x_for(di), y_for(hr)) for di, hr in points]
+        path_d = f"M{coords[0][0]:.1f},{coords[0][1]:.1f} " + " ".join(
+            f"L{x:.1f},{y:.1f}" for x, y in coords[1:]
+        )
+        approx_len = sum(
+            ((coords[i][0]-coords[i-1][0])**2 + (coords[i][1]-coords[i-1][1])**2) ** 0.5
+            for i in range(1, len(coords))
+        )
+        dash = max(int(approx_len) + 50, 100)
+        svg.append(f'<path d="{path_d}" fill="none" stroke="{BLUE}" stroke-width="1.5" opacity="0.55" '
+                   f'stroke-dasharray="{dash}" stroke-dashoffset="{dash}">'
+                   f'<animate attributeName="stroke-dashoffset" values="{dash};0" dur="2.5s" begin="0s" fill="freeze"/></path>')
+
+    n = max(len(points), 1)
+    for i, (di, hr) in enumerate(points):
+        x, y = x_for(di), y_for(hr)
+        begin = round(0.7 * (i / n), 2)
+        svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{BLUE}" filter="url(#glow)" opacity="0">'
+                   f'<animate attributeName="opacity" values="0;0;0.9" keyTimes="0;0.01;0.3" dur="9s" begin="{begin}s" fill="freeze"/></circle>')
+
+    date_range = f"{days[0].strftime('%b %-d')} \u2013 {days[-1].strftime('%b %-d, %Y')}"
+    svg.append(f'<text x="{plot_left}" y="18" font-family="monospace" font-size="11" fill="{TEXT}">{date_range}</text>')
+    svg.append(f'<text x="{plot_right}" y="18" text-anchor="end" font-family="monospace" font-size="10" fill="{DIM}">{len(points)} commits &#183; local time (IST, UTC+5:30)</text>')
+
     svg.append('</svg>')
     return "\n".join(svg)
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    out_path = os.path.join(script_dir, "..", "waveform-stats.svg")
-    usage, total = fetch_commit_hours()
-    svg_content = build_svg(usage, total)
-    with open(out_path, "w") as f:
-        f.write(svg_content)
-    print(f"wrote {out_path} from {total} commits: {[(n, round(p,1)) for n,p,_ in usage]}")
+    repo_root = os.path.join(script_dir, "..")
+    local_times = fetch_local_commit_times()
+
+    out_main = os.path.join(repo_root, "waveform-stats.svg")
+    svg0 = build_scatter_svg(local_times, window_index=0)
+    with open(out_main, "w") as f:
+        f.write(svg0)
+    print(f"wrote {out_main} (most recent {DAYS_PER_WINDOW} days)")
+
+    for w in range(1, NUM_WINDOWS):
+        out_w = os.path.join(repo_root, f"waveform-stats-earlier-{w}.svg")
+        svgw = build_scatter_svg(local_times, window_index=w)
+        with open(out_w, "w") as f:
+            f.write(svgw)
+        print(f"wrote {out_w} (window {w})")

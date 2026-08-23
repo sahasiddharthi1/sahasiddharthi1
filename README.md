@@ -28,9 +28,19 @@
 
 <sub align="center">
 
-when I actually code, by local commit hour across every repo — night owl, early riser, or somewhere in between, straight from real commit timestamps.
+every commit plotted by day and local hour (IST) — night owl or early riser, at a glance. Last 15 days shown above.
 
 </sub>
+
+<details>
+<summary>see the 15 days before that</summary>
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/waveform-stats-earlier-1.svg" width="900" />
+</div>
+
+</details>
 
 <br/>
 
