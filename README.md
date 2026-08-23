@@ -199,3 +199,15 @@ DSA · Operating Systems · Database Management · Web Technologies
 <div align="center">
   <img src="https://streak-stats.demolab.com/?user=sahasiddharthi1&hide_border=true&background=040711&ring=00E5FF&fire=00E5FF&currStreakLabel=00E5FF&sideLabels=d6f0ff&currStreakNum=d6f0ff&sideNums=d6f0ff&dates=3a5570" />
 </div>
+
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/isometric-contributions.svg" width="900" />
+</div>
+
+<sub align="center">
+
+the same year of contributions as the calendar above, as an isometric skyline — height per day is the real contribution count, regenerated on the same refresh cycle.
+
+</sub>
