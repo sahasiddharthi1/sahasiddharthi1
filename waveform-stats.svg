@@ -1,8 +1,33 @@
 <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+  </linearGradient>
+</defs>
 <rect x="0" y="0" width="900" height="240" rx="16" fill="#040711" stroke="#0d2847" stroke-width="1.5"/>
-<circle cx="450.0" cy="104.0" r="3" fill="#00E5FF">
-  <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
-</circle>
-<text x="450.0" y="140.0" text-anchor="middle" font-family="monospace" font-size="13" fill="#d6f0ff">Run the workflow once to populate this panel</text>
-<text x="450.0" y="160.0" text-anchor="middle" font-family="monospace" font-size="10" fill="#3a5570">Actions tab &#8594; Update commit-time-of-day waveform &#8594; Run workflow</text>
+<line x1="20" y1="194" x2="880" y2="194" stroke="#0d2847" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M0,194 C60.0,194.0 90.0,194.0 150.0,194.0 C230.0,194.0 270.0,111.4 350.0,111.4 C430.0,111.4 470.0,58.0 550.0,58.0 C630.0,58.0 670.0,72.6 750.0,72.6 C810.0,72.6 840.0,194 900.0,194 L900,240 L0,240 Z" fill="url(#fill)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.4;0.6" dur="9s" begin="0s" fill="freeze"/></path>
+<path d="M0,194 C60.0,194.0 90.0,194.0 150.0,194.0 C230.0,194.0 270.0,111.4 350.0,111.4 C430.0,111.4 470.0,58.0 550.0,58.0 C630.0,58.0 670.0,72.6 750.0,72.6 C810.0,72.6 840.0,194 900.0,194" fill="none" stroke="#00E5FF" stroke-width="2.5" filter="url(#glow)" stroke-dasharray="4000" stroke-dashoffset="4000"><animate attributeName="stroke-dashoffset" values="4000;0;0;4000" keyTimes="0;0.45;0.9;1" dur="9s" begin="0s" repeatCount="indefinite"/></path>
+<circle cx="150.0" cy="194.0" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.01s" fill="freeze"/></circle>
+<text x="150.0" y="161.0" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.01s" fill="freeze"/>NIGHT</text>
+<text x="150.0" y="175.0" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.01s" fill="freeze"/>12AM–6AM</text>
+<text x="150.0" y="188.0" text-anchor="middle" font-family="monospace" font-size="11" fill="#00E5FF" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="1.01s" fill="freeze"/>0%</text>
+<circle cx="350.0" cy="111.4" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/></circle>
+<text x="350.0" y="78.42857142857143" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/>MORNING</text>
+<text x="350.0" y="92.42857142857143" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/>6AM–12PM</text>
+<text x="350.0" y="105.42857142857143" text-anchor="middle" font-family="monospace" font-size="11" fill="#00E5FF" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="2.02s" fill="freeze"/>24%</text>
+<circle cx="550.0" cy="58.0" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.04s" fill="freeze"/></circle>
+<text x="550.0" y="25.0" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.04s" fill="freeze"/>AFTERNOON</text>
+<text x="550.0" y="39.0" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.04s" fill="freeze"/>12PM–6PM</text>
+<text x="550.0" y="52.0" text-anchor="middle" font-family="monospace" font-size="11" fill="#00E5FF" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="3.04s" fill="freeze"/>40%</text>
+<circle cx="750.0" cy="72.6" r="3.5" fill="#00E5FF" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/></circle>
+<text x="750.0" y="39.57142857142857" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#d6f0ff" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/>EVENING</text>
+<text x="750.0" y="53.57142857142857" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3a5570" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/>6PM–12AM</text>
+<text x="750.0" y="66.57142857142857" text-anchor="middle" font-family="monospace" font-size="11" fill="#00E5FF" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.01;0.2" dur="9s" begin="4.05s" fill="freeze"/>36%</text>
+<text x="876" y="226" text-anchor="end" font-family="monospace" font-size="9" fill="#3a5570">based on 70 recent commits, local commit time</text>
 </svg>
