@@ -197,6 +197,10 @@ DSA · Operating Systems · Database Management · Web Technologies
 </div>
 
 <div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=sahasiddharthi1&api_domain=wakapi.dev&hide_border=true&bg_color=040711&title_color=00E5FF&icon_color=00E5FF&text_color=d6f0ff&custom_title=Coding+Stats+(Wakapi)&layout=compact" />
+</div>
+
+<div align="center">
   <img src="https://streak-stats.demolab.com/?user=sahasiddharthi1&hide_border=true&background=040711&ring=00E5FF&fire=00E5FF&currStreakLabel=00E5FF&sideLabels=d6f0ff&currStreakNum=d6f0ff&sideNums=d6f0ff&dates=3a5570" />
 </div>
 
