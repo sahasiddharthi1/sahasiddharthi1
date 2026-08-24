@@ -203,27 +203,5 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <svg width="420" height="300" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
-    <rect width="420" height="300" fill="#040711" rx="12"/>
-    <text x="210" y="28" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="14" font-weight="bold">Tech Stack Distribution</text>
-    <g transform="translate(150,160)">
-      <circle r="90" fill="transparent" stroke="#00E5FF" stroke-width="40" stroke-dasharray="169.6 395.8" stroke-dashoffset="0" transform="rotate(-90)"/>
-      <circle r="90" fill="transparent" stroke="#3178C6" stroke-width="40" stroke-dasharray="141.3 424.1" stroke-dashoffset="-169.6" transform="rotate(-90)"/>
-      <circle r="90" fill="transparent" stroke="#61DAFB" stroke-width="40" stroke-dasharray="113.1 452.4" stroke-dashoffset="-310.9" transform="rotate(-90)"/>
-      <circle r="90" fill="transparent" stroke="#68A063" stroke-width="40" stroke-dasharray="84.8 480.6" stroke-dashoffset="-424.0" transform="rotate(-90)"/>
-      <circle r="90" fill="transparent" stroke="#FFD43B" stroke-width="40" stroke-dasharray="56.5 508.9" stroke-dashoffset="-508.8" transform="rotate(-90)"/>
-    </g>
-    <g transform="translate(275,75)">
-      <rect width="12" height="12" fill="#00E5FF" rx="2"/>
-      <text x="18" y="11" fill="#d6f0ff" font-family="monospace" font-size="11">Go (30%)</text>
-      <rect y="22" width="12" height="12" fill="#3178C6" rx="2"/>
-      <text x="18" y="33" fill="#d6f0ff" font-family="monospace" font-size="11">TypeScript (25%)</text>
-      <rect y="44" width="12" height="12" fill="#61DAFB" rx="2"/>
-      <text x="18" y="55" fill="#d6f0ff" font-family="monospace" font-size="11">React (20%)</text>
-      <rect y="66" width="12" height="12" fill="#68A063" rx="2"/>
-      <text x="18" y="77" fill="#d6f0ff" font-family="monospace" font-size="11">Node.js (15%)</text>
-      <rect y="88" width="12" height="12" fill="#FFD43B" rx="2"/>
-      <text x="18" y="99" fill="#d6f0ff" font-family="monospace" font-size="11">Python (10%)</text>
-    </g>
-  </svg>
+  <img src="https://quickchart.io/chart?c=%7Btype%3A%27doughnut%27%2Cdata%3A%7Blabels%3A%5B%27Go%27%2C%27TypeScript%27%2C%27React%27%2C%27Node.js%27%2C%27Python%27%5D%2Cdatasets%3A%5B%7Bdata%3A%5B30%2C25%2C20%2C15%2C10%5D%2CbackgroundColor%3A%5B%27%2300E5FF%27%2C%27%233178C6%27%2C%27%2361DAFB%27%2C%27%2368A063%27%2C%27%23FFD43B%27%5D%2CborderColor%3A%27%23040711%27%2CborderWidth%3A3%7D%5D%7D%2Coptions%3A%7Bplugins%3A%7Btitle%3A%7Bdisplay%3Atrue%2Ctext%3A%27Tech+Stack+Distribution%27%2Ccolor%3A%27%2300E5FF%27%2Cfont%3A%7Bsize%3A16%7D%7D%2Clegend%3A%7Bposition%3A%27right%27%2Clabels%3A%7Bcolor%3A%27%23d6f0ff%27%2Cfont%3A%7Bsize%3A13%7D%7D%7D%7D%7D&w=500&h=300&bkg=%23040711" alt="Tech Stack Distribution" />
 </div>
