@@ -61,6 +61,14 @@ poll();
 </body></html>`)
 }).listen(QR_PORT, () => {
   console.log(`[qr] Open http://localhost:${QR_PORT} to see the QR code (scan with your phone)`)
+
+  if (process.env.RENDER_EXTERNAL_URL) {
+    const url = process.env.RENDER_EXTERNAL_URL
+    setInterval(() => {
+      fetch(url).catch(() => undefined)
+    }, 14 * 60 * 1000)
+    console.log(`[qr] Self-ping enabled to prevent sleep: ${url}`)
+  }
 })
 
 async function deliver(
