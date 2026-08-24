@@ -203,11 +203,27 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/isometric-contributions.svg" width="900" />
+  <svg width="420" height="300" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="420" height="300" fill="#040711" rx="12"/>
+    <text x="210" y="28" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="14" font-weight="bold">Tech Stack Distribution</text>
+    <g transform="translate(150,160)">
+      <circle r="90" fill="transparent" stroke="#00E5FF" stroke-width="40" stroke-dasharray="169.6 395.8" stroke-dashoffset="0" transform="rotate(-90)"/>
+      <circle r="90" fill="transparent" stroke="#3178C6" stroke-width="40" stroke-dasharray="141.3 424.1" stroke-dashoffset="-169.6" transform="rotate(-90)"/>
+      <circle r="90" fill="transparent" stroke="#61DAFB" stroke-width="40" stroke-dasharray="113.1 452.4" stroke-dashoffset="-310.9" transform="rotate(-90)"/>
+      <circle r="90" fill="transparent" stroke="#68A063" stroke-width="40" stroke-dasharray="84.8 480.6" stroke-dashoffset="-424.0" transform="rotate(-90)"/>
+      <circle r="90" fill="transparent" stroke="#FFD43B" stroke-width="40" stroke-dasharray="56.5 508.9" stroke-dashoffset="-508.8" transform="rotate(-90)"/>
+    </g>
+    <g transform="translate(275,75)">
+      <rect width="12" height="12" fill="#00E5FF" rx="2"/>
+      <text x="18" y="11" fill="#d6f0ff" font-family="monospace" font-size="11">Go (30%)</text>
+      <rect y="22" width="12" height="12" fill="#3178C6" rx="2"/>
+      <text x="18" y="33" fill="#d6f0ff" font-family="monospace" font-size="11">TypeScript (25%)</text>
+      <rect y="44" width="12" height="12" fill="#61DAFB" rx="2"/>
+      <text x="18" y="55" fill="#d6f0ff" font-family="monospace" font-size="11">React (20%)</text>
+      <rect y="66" width="12" height="12" fill="#68A063" rx="2"/>
+      <text x="18" y="77" fill="#d6f0ff" font-family="monospace" font-size="11">Node.js (15%)</text>
+      <rect y="88" width="12" height="12" fill="#FFD43B" rx="2"/>
+      <text x="18" y="99" fill="#d6f0ff" font-family="monospace" font-size="11">Python (10%)</text>
+    </g>
+  </svg>
 </div>
-
-<sub align="center">
-
-the same year of contributions as the calendar above, as an isometric skyline — height per day is the real contribution count, regenerated on the same refresh cycle.
-
-</sub>
