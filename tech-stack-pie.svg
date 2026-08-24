@@ -1,0 +1,34 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#040711" rx="12"/>
+  <text x="180" y="28" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="bold">Tech Stack Distribution</text>
+
+  <!-- Pie chart center at 160,165, radius 90 -->
+  <!-- Go 30% = 108deg -->
+  <path d="M160,165 L160,75 A90,90 0 0,1 244.6,126.4 Z" fill="#00E5FF"/>
+  <!-- TypeScript 25% = 90deg -->
+  <path d="M160,165 L244.6,126.4 A90,90 0 0,1 250,165 Z" fill="#3178C6"/>
+  <!-- React 20% = 72deg -->
+  <path d="M160,165 L250,165 A90,90 0 0,1 215.4,243.6 Z" fill="#61DAFB"/>
+  <!-- Node.js 15% = 54deg -->
+  <path d="M160,165 L215.4,243.6 A90,90 0 0,1 103.8,232.4 Z" fill="#68A063"/>
+  <!-- Python 10% = 36deg -->
+  <path d="M160,165 L103.8,232.4 A90,90 0 0,1 160,75 Z" fill="#FFD43B"/>
+
+  <!-- Legend -->
+  <g transform="translate(300,75)">
+    <rect width="14" height="14" fill="#00E5FF" rx="3"/>
+    <text x="22" y="13" fill="#d6f0ff" font-family="monospace" font-size="13">Go (30%)</text>
+
+    <rect y="28" width="14" height="14" fill="#3178C6" rx="3"/>
+    <text x="22" y="41" fill="#d6f0ff" font-family="monospace" font-size="13">TypeScript (25%)</text>
+
+    <rect y="56" width="14" height="14" fill="#61DAFB" rx="3"/>
+    <text x="22" y="69" fill="#d6f0ff" font-family="monospace" font-size="13">React (20%)</text>
+
+    <rect y="84" width="14" height="14" fill="#68A063" rx="3"/>
+    <text x="22" y="97" fill="#d6f0ff" font-family="monospace" font-size="13">Node.js (15%)</text>
+
+    <rect y="112" width="14" height="14" fill="#FFD43B" rx="3"/>
+    <text x="22" y="125" fill="#d6f0ff" font-family="monospace" font-size="13">Python (10%)</text>
+  </g>
+</svg>

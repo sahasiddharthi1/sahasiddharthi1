@@ -203,5 +203,5 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://quickchart.io/chart?w=500&h=300&bkg=%23040711&c={type:'doughnut',data:{labels:['Go','TypeScript','React','Node.js','Python'],datasets:[{data:[30,25,20,15,10],backgroundColor:['%2300E5FF','%233178C6','%2361DAFB','%2368A063','%23FFD43B'],borderColor:'%23040711',borderWidth:3}]},options:{plugins:{title:{display:true,text:'Tech Stack Distribution',color:'%2300E5FF',font:{size:16}},legend:{position:'right',labels:{color:'%23d6f0ff',font:{size:13}}}}}}" alt="Tech Stack Distribution" />
+  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/tech-stack-pie.svg" width="500" alt="Tech Stack Distribution" />
 </div>
