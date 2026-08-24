@@ -203,5 +203,5 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://quickchart.io/chart?c=%7Btype%3A%27doughnut%27%2Cdata%3A%7Blabels%3A%5B%27Go%27%2C%27TypeScript%27%2C%27React%27%2C%27Node.js%27%2C%27Python%27%5D%2Cdatasets%3A%5B%7Bdata%3A%5B30%2C25%2C20%2C15%2C10%5D%2CbackgroundColor%3A%5B%27%2300E5FF%27%2C%27%233178C6%27%2C%27%2361DAFB%27%2C%27%2368A063%27%2C%27%23FFD43B%27%5D%2CborderColor%3A%27%23040711%27%2CborderWidth%3A3%7D%5D%7D%2Coptions%3A%7Bplugins%3A%7Btitle%3A%7Bdisplay%3Atrue%2Ctext%3A%27Tech+Stack+Distribution%27%2Ccolor%3A%27%2300E5FF%27%2Cfont%3A%7Bsize%3A16%7D%7D%2Clegend%3A%7Bposition%3A%27right%27%2Clabels%3A%7Bcolor%3A%27%23d6f0ff%27%2Cfont%3A%7Bsize%3A13%7D%7D%7D%7D%7D&w=500&h=300&bkg=%23040711" alt="Tech Stack Distribution" />
+  <img src="https://quickchart.io/chart?w=500&h=300&bkg=%23040711&c={type:'doughnut',data:{labels:['Go','TypeScript','React','Node.js','Python'],datasets:[{data:[30,25,20,15,10],backgroundColor:['%2300E5FF','%233178C6','%2361DAFB','%2368A063','%23FFD43B'],borderColor:'%23040711',borderWidth:3}]},options:{plugins:{title:{display:true,text:'Tech Stack Distribution',color:'%2300E5FF',font:{size:16}},legend:{position:'right',labels:{color:'%23d6f0ff',font:{size:13}}}}}}" alt="Tech Stack Distribution" />
 </div>
