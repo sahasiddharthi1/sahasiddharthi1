@@ -1,8 +1,6 @@
-﻿import type { BotTurn, Session } from './types'
-import { resolveArea } from './areas'
+import type { BotTurn, Session } from './types'
+import { resolveArea, getAreas, randomExpert, getGoogleMapsLink, generateOTP } from './areas'
 import { getService } from './catalog'
-
-export type { BotTurn }
 
 export function createSession(area?: string): Session {
   return { step: 'greeting', area }
@@ -13,7 +11,15 @@ function parseService(text: string): string | undefined {
   if (lower.includes('dish')) return 'dishwashing'
   if (lower.includes('kitchen')) return 'kitchen'
   if (lower.includes('full') || lower.includes('house')) return 'fullhouse'
-  if (lower.includes('laundry') || lower.includes('wash')) return 'laundry'
+  if (lower.includes('laundry') || lower.includes('iron')) return 'laundry'
+  if (lower.includes('bathroom') || lower.includes('toilet')) return 'bathroom'
+  if (lower.includes('sofa') || lower.includes('carpet') || lower.includes('couch')) return 'sofa'
+  if (lower.includes('ac') || lower.includes('air condition')) return 'ac'
+  if (lower.includes('pest') || lower.includes('cockroach') || lower.includes('rat')) return 'pest'
+  if (lower.includes('paint') || lower.includes('painting')) return 'painting'
+  if (lower.includes('plumb') || lower.includes('leak') || lower.includes('pipe')) return 'plumbing'
+  if (lower.includes('electric') || lower.includes('wiring') || lower.includes('switch')) return 'electrical'
+  if (lower.includes('deep clean') || lower.includes('deepclean')) return 'deepclean'
   return undefined
 }
 
@@ -43,9 +49,15 @@ function isHelp(text: string): boolean {
   return /^(help|options|what can)/i.test(text.trim())
 }
 
+function areaList(): string {
+  const areas = getAreas()
+  const lines = areas.map((a) => `• ${a.name}`)
+  return lines.join('\n')
+}
+
 export function handleUserInput(session: Session, text: string): { turn: BotTurn; session: Session } {
   if (isRestart(text)) {
-    return { turn: { text: 'Fresh start! Which area do you need cleaning in?\n\n• Koramangala\n• HSR Layout\n• Bellandur\n• Indiranagar' }, session: { step: 'greeting' } }
+    return { turn: { text: `Fresh start! Which area do you need cleaning in?\n\n${areaList()}` }, session: { step: 'greeting' } }
   }
 
   if (isHelp(text)) {
@@ -69,7 +81,7 @@ export function handleUserInput(session: Session, text: string): { turn: BotTurn
         }
         return { turn: { text: `We're live in ${area}! What service do you need?\n\n🍽️ Dishwashing — ₹150/hr\n🧹 Kitchen Deep Clean — ₹180/hr\n🏠 Full House — ₹250/hr\n👕 Laundry — ₹160/hr`, buttons: ['Dishwashing', 'Kitchen', 'Full House', 'Laundry'] }, session: { step: 'service', area } }
       }
-      return { turn: { text: 'Hi! 👋 Welcome to Snabbit.\n\nWhich area do you need cleaning in?\n\n• Koramangala\n• HSR Layout\n• Bellandur\n• Indiranagar', buttons: ['Koramangala', 'HSR Layout', 'Bellandur', 'Indiranagar'] }, session }
+      return { turn: { text: `Hi! 👋 Welcome to Snabbit.\n\nWhich area do you need cleaning in?\n\n${areaList()}` }, session }
     }
 
     case 'service': {
@@ -94,21 +106,81 @@ export function handleUserInput(session: Session, text: string): { turn: BotTurn
           return { turn: { text: 'No worries! What service do you need?' }, session: { ...session, step: 'service' } }
         }
         const id = `snb-${Date.now().toString(36)}`
-        return { turn: { text: `Perfect! Here's your payment link:\n\nhttps://rzp.io/l/${id}\n\nPay ₹${session.total} to confirm. I'll track your expert after payment.`, tracking: true }, session: { ...session, step: 'tracking', paid: true } }
+        const expert = randomExpert(session.area!)
+        const otp = generateOTP()
+        const mapLink = getGoogleMapsLink(session.area!)
+        const svc = getService(session.service!)!
+        const duration = session.duration ?? 1
+        const paymentUrl = `https://rzp.io/l/${id}`
+        const confirmText = [
+          `✅ *Booking Confirmed!*`,
+          ``,
+          `🧹 *Service:* ${svc.name}`,
+          `📍 *Area:* ${resolveArea(session.area!) ?? session.area}`,
+          `⏱️ *Duration:* ${duration} hour${duration > 1 ? 's' : ''}`,
+          `💰 *Total:* ₹${session.total}`,
+          ``,
+          `👩‍💼 *Your Expert:*`,
+          `*${expert?.name ?? 'Assigned soon'}* | ${expert?.photo ?? ''} | ⭐ ${expert?.rating ?? '4.8'} | ${expert?.bookings ?? '300+'} bookings`,
+          ``,
+          `🔐 *Your OTP:* *${otp}*`,
+          `(Share this OTP when the expert arrives to verify identity)`,
+          ``,
+          `📍 *Expert Location:*`,
+          `${mapLink}`,
+          ``,
+          `🔗 *Pay here:* ${paymentUrl}`,
+          ``,
+          `After payment, your expert will be dispatched. ETA: 12-25 min`,
+        ].join('\n')
+        return {
+          turn: { text: confirmText, tracking: true },
+          session: { ...session, step: 'tracking', paid: true, expert: expert ?? undefined, otp, bookingRef: id },
+        }
       }
       return { turn: { text: 'Confirm or change?' }, session }
     }
 
     case 'tracking': {
       if (isYes(text)) {
-        return { turn: { text: 'Expert dispatched! ETA 12 min. Updates incoming...' }, session: { ...session, step: 'done' } }
+        const expertName = session.expert?.name ?? 'Your expert'
+        return {
+          turn: {
+            text: [
+              `🚶 *${expertName}* is on the way!`,
+              ``,
+              `📍 Live location: ${getGoogleMapsLink(session.area!)}`,
+              ``,
+              `🔐 *OTP:* *${session.otp ?? 'N/A'}*`,
+              `(Show this OTP to ${expertName} when they arrive)`,
+              ``,
+              `ETA: 12-25 min. Updates incoming...`,
+            ].join('\n'),
+          },
+          session: { ...session, step: 'done' },
+        }
       }
       return { turn: { text: 'Waiting for payment. Need anything else?' }, session }
     }
 
     case 'done': {
       if (isYes(text)) {
-        return { turn: { text: 'Rate your experience (1-5 stars):', buttons: ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐⭐'] }, session: { ...session, step: 'rating' } }
+        const expertName = session.expert?.name ?? 'Your expert'
+        return {
+          turn: {
+            text: [
+              `✅ *${expertName}* has arrived!`,
+              ``,
+              `🔐 *OTP Verification:*`,
+              `Your OTP: *${session.otp ?? 'N/A'}*`,
+              `Please share this OTP with ${expertName} to verify they're from Snabbit.`,
+              ``,
+              `Rate your experience (1-5 stars):`,
+            ].join('\n'),
+            buttons: ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐⭐'],
+          },
+          session: { ...session, step: 'rating' },
+        }
       }
       return { turn: { text: 'Thanks! Type "new booking" to start over.' }, session }
     }

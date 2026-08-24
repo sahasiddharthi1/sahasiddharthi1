@@ -1,6 +1,8 @@
 ﻿import { createServer } from 'node:http'
 import { serverConfig } from './config'
 import { handleIncoming } from './handler'
+import { initRAG } from './rag'
+import { initGemini } from './gemini'
 
 function readBody(req: import('node:http').IncomingMessage): Promise<string> {
   return new Promise((resolve) => {
@@ -58,6 +60,8 @@ const server = createServer(async (req, res) => {
 })
 
 server.listen(serverConfig.port, () => {
+  initRAG()
+  initGemini()
   console.log(`[webhook] listening on http://localhost:${serverConfig.port}`)
   if (serverConfig.localMock) console.log('[webhook] LOCAL MOCK MODE')
 })

@@ -28,6 +28,8 @@ export interface Session {
   total?: number
   paid?: boolean
   rating?: number
+  otp?: string
+  bookingRef?: string
 }
 
 export interface BotTurn {

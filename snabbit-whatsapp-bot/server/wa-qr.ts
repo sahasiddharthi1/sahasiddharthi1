@@ -1,4 +1,5 @@
-﻿import { createServer } from 'node:http'
+﻿import 'dotenv/config'
+import { createServer } from 'node:http'
 import { create } from '@wppconnect-team/wppconnect'
 import type { Message } from '@wppconnect-team/wppconnect'
 
@@ -17,6 +18,10 @@ import { createSession, handleUserInput } from '../src/lib/engine'
 import { resolveArea } from '../src/lib/areas'
 import { presentTurn } from './presenter'
 import { store } from './store'
+import { initRAG, getStats } from './rag'
+import { initGemini, isGeminiReady } from './gemini'
+import { classifyIntent, handleRAGQuery } from './llm-router'
+import { initRazorpay, isRazorpayReady, createPaymentLink, getMockPaymentUrl } from './razorpay'
 import type { OutboundMessage } from './whatsapp'
 
 const SESSION = process.env.WA_SESSION ?? 'snabbit'
@@ -30,7 +35,7 @@ let qrAttempts = 0
 createServer((req, res) => {
   if (req.url === '/qr.json') {
     res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify({ qr: latestQr, attempts: qrAttempts }))
+    res.end(JSON.stringify({ qr: latestQr, attempts: qrAttempts, rag: getStats(), gemini: isGeminiReady(), razorpay: isRazorpayReady() }))
     return
   }
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
@@ -40,12 +45,14 @@ createServer((req, res) => {
 <p>Scan this QR with your phone: WhatsApp → Linked devices → Link a device</p>
 <img id="qr" style="width:260px;background:#fff;padding:12px;border-radius:12px" alt="QR" />
 <p id="hint" style="opacity:.8"></p>
+<p id="stats" style="opacity:.6;font-size:12px"></p>
 <script>
 async function poll(){
   try{
     const r=await fetch('/qr.json'); const d=await r.json();
     if(d.qr){ document.getElementById('qr').src=d.qr; document.getElementById('hint').textContent='QR updated — scan with your phone'; }
     else { document.getElementById('hint').textContent='Waiting for QR...'; }
+    document.getElementById('stats').textContent='RAG: '+d.rag.total+' records, '+d.rag.localities+' areas, '+d.rag.services+' services | Gemini: '+(d.gemini?'ON':'OFF')+' | Razorpay: '+(d.razorpay?'ON':'OFF');
   }catch(e){}
   setTimeout(poll,1500);
 }
@@ -91,12 +98,13 @@ async function deliver(
   }
 }
 
-function scheduleLocalTracking(client: { sendText: (to: string, body: string) => Promise<unknown> }, to: string, expertName: string): void {
+function scheduleLocalTracking(client: { sendText: (to: string, body: string) => Promise<unknown> }, to: string, expertName: string, otp?: string): void {
+  const otpLine = otp ? `\n\n🔐 *Reminder:* OTP is *${otp}* — share with ${expertName} on arrival` : ''
   const plan: Array<{ label: string; delay: number }> = [
-    { label: '🎉 Booking accepted', delay: 400 },
-    { label: `🚶 ${expertName} is on the way`, delay: 2500 },
-    { label: `📍 ${expertName} is 5 min away`, delay: 4500 },
-    { label: `✅ ${expertName} arrived`, delay: 5000 },
+    { label: `🎉 Booking accepted — ${expertName} confirmed`, delay: 400 },
+    { label: `🚶 ${expertName} is on the way! ETA 12 min${otpLine}`, delay: 3000 },
+    { label: `📍 ${expertName} is 5 min away. Please keep OTP ready${otpLine}`, delay: 5500 },
+    { label: `✅ ${expertName} has arrived! Please share the OTP to verify identity`, delay: 7000 },
   ]
   let acc = 0
   for (const step of plan) {
@@ -108,6 +116,10 @@ function scheduleLocalTracking(client: { sendText: (to: string, body: string) =>
 }
 
 async function main(): Promise<void> {
+  initRAG()
+  initGemini()
+  initRazorpay()
+
   const client = await create({
     session: SESSION,
     headless: HEADLESS,
@@ -125,7 +137,7 @@ async function main(): Promise<void> {
     statusFind: (status, session) => {
       console.log(`[status] ${status} (session: ${session})`)
       if (String(status).toLowerCase() === 'ready') {
-        console.log('[bot] ✅ Online — message your WhatsApp number: "Hi, I need cleaning in Koramangala"')
+        console.log('[bot] ✅ Online — message your WhatsApp number')
       }
     },
   })
@@ -142,11 +154,54 @@ async function main(): Promise<void> {
       const from = msg.from
       const prev = store.get(from)
       const session = prev ?? createSession(resolveArea(text))
+
+      const intent = classifyIntent(text)
+
+      if (intent.type === 'rag' && session.step === 'greeting') {
+        console.log(`[rag] query from ${from}: ${text}`)
+        const ragResponse = await handleRAGQuery(text)
+        console.log(`[rag] response: ${ragResponse.substring(0, 100)}...`)
+        await deliver(client, from, [{ type: 'text', text: { body: ragResponse } }])
+        return
+      }
+
       const { turn, session: next } = handleUserInput(session, text)
       store.set(from, next)
 
-      await deliver(client, from, presentTurn(turn))
-      if (turn.tracking) scheduleLocalTracking(client, from, next.expert?.name ?? 'the expert')
+      let messages = presentTurn(turn)
+
+      if (turn.tracking && next.step === 'tracking' && next.area && next.service && next.bookingRef) {
+        const referenceId = next.bookingRef
+        const svcName = next.service
+        const areaName = resolveArea(next.area) ?? next.area
+        const description = `${svcName} service in ${areaName}`
+
+        let paymentUrl = getMockPaymentUrl(referenceId)
+        if (isRazorpayReady()) {
+          const result = await createPaymentLink({
+            amount: next.total ?? 0,
+            description,
+            customerName: 'WhatsApp Customer',
+            customerContact: from.replace('@c.us', ''),
+            referenceId,
+          })
+          if (result) {
+            paymentUrl = result.shortUrl
+            console.log(`[razorpay] Created payment link: ${result.shortUrl}`)
+          }
+        }
+
+        const mockUrl = `https://rzp.io/l/${referenceId}`
+        messages = messages.map((m) => {
+          if (m.type === 'text' && m.text?.body && m.text.body.includes(mockUrl)) {
+            return { ...m, text: { body: m.text.body.replace(mockUrl, paymentUrl) } }
+          }
+          return m
+        })
+      }
+
+      await deliver(client, from, messages)
+      if (turn.tracking) scheduleLocalTracking(client, from, next.expert?.name ?? 'the expert', next.otp)
     })().catch((err) => console.error('[bot] handler error:', err))
   })
 

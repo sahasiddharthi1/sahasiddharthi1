@@ -1,4 +1,4 @@
-﻿import { services } from '../lib/catalog'
+import { services } from '../lib/catalog'
 import { getAreas } from '../lib/areas'
 import BookButton from './BookButton'
 
@@ -79,15 +79,15 @@ export default function Landing() {
       </section>
 
       <section className="bg-gray-50 px-6 py-12">
-        <h2 className="text-2xl font-bold text-center mb-8">Areas we serve</h2>
-        <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+        <h2 className="text-2xl font-bold text-center mb-8">Areas we serve ({areas.length} areas across Bangalore)</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
           {areas.map((a) => (
             <a
               key={a.slug}
               href={`#/area/${a.slug}`}
-              className="bg-white rounded-2xl p-4 text-center border border-gray-100 hover:border-[#25D366] transition-colors"
+              className="bg-white rounded-xl p-3 text-center border border-gray-100 hover:border-[#25D366] transition-colors"
             >
-              <p className="font-semibold">{a.name}</p>
+              <p className="font-semibold text-sm">{a.name}</p>
               <p className="text-xs text-gray-400 mt-1">{a.experts.length} experts</p>
             </a>
           ))}
@@ -101,7 +101,7 @@ export default function Landing() {
             { q: 'Do I need to download an app?', a: 'No. Everything happens on WhatsApp — just scan the QR and chat.' },
             { q: 'How do I pay?', a: 'The bot sends a Razorpay link. Pay with UPI, card, or netbanking.' },
             { q: 'Can I track my expert?', a: 'Yes! Get live updates from dispatch to arrival.' },
-            { q: 'What areas do you serve?', a: 'Koramangala, HSR Layout, Bellandur, and Indiranagar.' },
+            { q: 'What areas do you serve?', a: 'We cover 25+ areas across Bangalore — from Koramangala to Whitefield, Electronic City to Hebbal, and everywhere in between.' },
           ].map((f) => (
             <details key={f.q} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
               <summary className="font-semibold cursor-pointer">{f.q}</summary>

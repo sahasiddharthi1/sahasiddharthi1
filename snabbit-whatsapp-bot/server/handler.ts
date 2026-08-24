@@ -4,6 +4,7 @@ import { createSession, handleUserInput } from '../src/lib/engine'
 import { resolveArea } from '../src/lib/areas'
 import { presentTurn } from './presenter'
 import { store } from './store'
+import { classifyIntent, handleRAGQuery } from './llm-router'
 
 function messageText(body: unknown): string | null {
   const b = body as Record<string, unknown>
@@ -23,6 +24,16 @@ export async function handleIncoming(phone: string, body: unknown): Promise<void
 
   const prev = store.get(phone)
   const session = prev ?? createSession(resolveArea(text))
+
+  const intent = classifyIntent(text)
+
+  if (intent.type === 'rag' && session.step === 'greeting') {
+    const ragResponse = await handleRAGQuery(text)
+    const msgs: OutboundMessage[] = [{ type: 'text', text: { body: ragResponse } }]
+    await sendMessages(phone, msgs)
+    return
+  }
+
   const { turn, session: next } = handleUserInput(session, text)
   store.set(phone, next)
 
