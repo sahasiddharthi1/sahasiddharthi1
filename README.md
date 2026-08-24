@@ -207,7 +207,7 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://ligatures.netlify.app/api/isometric?user=sahasiddharthi1&theme=geist_dark" alt="GitHub Contributions" width="900" />
+  <img src="https://isometric-contributions-spectrewolf8.onrender.com/api/graph?username=sahasiddharthi1&theme=github&stats=true&width=1000&height=600" alt="GitHub Contributions" />
 </div>
 
 <sub align="center">
