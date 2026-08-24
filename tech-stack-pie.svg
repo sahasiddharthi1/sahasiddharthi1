@@ -2,17 +2,17 @@
   <rect width="500" height="300" fill="#040711" rx="12"/>
   <text x="180" y="28" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="bold">Tech Stack Distribution</text>
 
-  <!-- Pie chart center at 160,165, radius 90 -->
-  <!-- Go 30% = 108deg -->
-  <path d="M160,165 L160,75 A90,90 0 0,1 244.6,126.4 Z" fill="#00E5FF"/>
-  <!-- TypeScript 25% = 90deg -->
-  <path d="M160,165 L244.6,126.4 A90,90 0 0,1 250,165 Z" fill="#3178C6"/>
-  <!-- React 20% = 72deg -->
-  <path d="M160,165 L250,165 A90,90 0 0,1 215.4,243.6 Z" fill="#61DAFB"/>
-  <!-- Node.js 15% = 54deg -->
-  <path d="M160,165 L215.4,243.6 A90,90 0 0,1 103.8,232.4 Z" fill="#68A063"/>
-  <!-- Python 10% = 36deg -->
-  <path d="M160,165 L103.8,232.4 A90,90 0 0,1 160,75 Z" fill="#FFD43B"/>
+  <!-- Pie center (160,165), radius 90. Angles from top, clockwise. -->
+  <!-- Go 30% = 108deg : 0 -> 108 -->
+  <path d="M160,165 L160,75 A90,90 0 0,1 245.6,192.8 Z" fill="#00E5FF"/>
+  <!-- TypeScript 25% = 90deg : 108 -> 198 -->
+  <path d="M160,165 L245.6,192.8 A90,90 0 0,1 132.2,250.6 Z" fill="#3178C6"/>
+  <!-- React 20% = 72deg : 198 -> 270 -->
+  <path d="M160,165 L132.2,250.6 A90,90 0 0,1 70,165 Z" fill="#61DAFB"/>
+  <!-- Node.js 15% = 54deg : 270 -> 324 -->
+  <path d="M160,165 L70,165 A90,90 0 0,1 107.1,92.2 Z" fill="#68A063"/>
+  <!-- Python 10% = 36deg : 324 -> 360 -->
+  <path d="M160,165 L107.1,92.2 A90,90 0 0,1 160,75 Z" fill="#FFD43B"/>
 
   <!-- Legend -->
   <g transform="translate(300,75)">
