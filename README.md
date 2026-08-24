@@ -215,3 +215,13 @@ DSA · Operating Systems · Database Management · Web Technologies
 the same year of contributions as the calendar above, as an isometric skyline — height per day is the real contribution count, regenerated on the same refresh cycle.
 
 </sub>
+
+<br/>
+
+<div align="center">
+  <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien">
+    <img src="https://raw.githubusercontent.com/jasonlong/isometric-contributions/main/img/preview-dark.png" width="600" alt="Isometric Contributions Preview" />
+  </a>
+  <br/>
+  <sub>install the <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien">browser extension</a> to see your own contribution graph in isometric 3D on GitHub</sub>
+</div>
