@@ -207,21 +207,11 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://isometric-contributions-spectrewolf8.onrender.com/api/graph?username=sahasiddharthi1&theme=dark&stats=true&width=1000&height=600" alt="GitHub Contributions" />
+  <img src="https://raw.githubusercontent.com/jasonlong/isometric-contributions/main/img/preview-dark.png" width="900" alt="GitHub Contributions - Isometric 3D (Dark Mode)" />
 </div>
 
 <sub align="center">
 
-the same year of contributions as the calendar above, as an isometric skyline — height per day is the real contribution count, regenerated on the same refresh cycle.
+your contribution graph rendered in isometric 3D — install the <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien">browser extension</a> to see it live on GitHub
 
 </sub>
-
-<br/>
-
-<div align="center">
-  <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien">
-    <img src="https://raw.githubusercontent.com/jasonlong/isometric-contributions/main/img/preview-dark.png" width="600" alt="Isometric Contributions Preview" />
-  </a>
-  <br/>
-  <sub>install the <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien">browser extension</a> to see your own contribution graph in isometric 3D on GitHub</sub>
-</div>
