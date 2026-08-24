@@ -203,7 +203,7 @@ DSA · Operating Systems · Database Management · Web Technologies
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sahasiddharthi1/sahasiddharthi1/main/isometric-contributions.svg" width="900" />
+  <img src="https://isometric-contributions-spectrewolf8.onrender.com/api/graph?username=sahasiddharthi1&theme=dark&stats=true&width=1000&height=600" alt="GitHub Contributions" />
 </div>
 
 <sub align="center">
